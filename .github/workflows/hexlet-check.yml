@@ -25,7 +25,7 @@ jobs:
           hexlet-id: ${{ secrets.HEXLET_ID }}
 
       - name: Init project
-        run: make install
+        run: make setup
 
       - name: Test
         run: make test
