@@ -23,9 +23,9 @@ jobs:
         with:
           hexlet-id: ${{ secrets.HEXLET_ID }}
 
-      - name: Setup project
-        run: composer install
+      - name: Update project
+        run: composer update
 
-      - name: Check lint
-        run: make lint
+      - name: Test
+        run: make test
 
