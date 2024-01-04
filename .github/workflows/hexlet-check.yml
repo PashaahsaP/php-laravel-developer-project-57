@@ -6,6 +6,7 @@
 name: hexlet-check
 
 on:
+  repository_dispatch:
   push:
     branches:
       - '**'
@@ -23,8 +24,8 @@ jobs:
         with:
           hexlet-id: ${{ secrets.HEXLET_ID }}
 
-      - name: Update project
-        run: composer update
+      - name: Init project
+        run: make install
 
       - name: Test
         run: make test
