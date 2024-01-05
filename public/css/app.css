@@ -8,19 +8,32 @@ html{
 
 header{
     height: 60px;
-    background: #111827;
+    padding:0px 15px;
+    background: #161e31;
+}
+.headerSpan{
+    font-size: 1.25rem;
 }
 
 body{
     padding: 0px;
     margin: 0px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
 }
 
 nav{
     height: 100%;
 }
 
-
+.app{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
 nav div a{
     margin: 0px 10px;
@@ -40,7 +53,7 @@ nav div a :hover{
     align-items: center;
 }
 
-.btn{
+.blue-btn{
     margin: 0px 10px;
     height: 30px;
     padding: 5px 7px;;
@@ -48,14 +61,14 @@ nav div a :hover{
     border-radius: 7px;
     user-select: none;
 }
-.btn:hover{
+.blue-btn:hover{
     background-color: rgb(54, 145, 250);
 }
-.btn:active{
+.blue-btn:active{
     background-color:rgb(34, 121, 221);
 }
 
-.btn span{
+.blue-btn a{
     color: white;
     font-family: Nunito,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
     font-weight: 500;
@@ -71,4 +84,27 @@ nav div a :hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.smudged-line {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    filter: blur(0.5px);
+  }
+
+section{
+    background: #161e31;
+    padding:20px;
+    height: 100%;
+}
+
+.section-h3{
+    color: white;
+    font-size: 3.75rem;
+    margin: 20px 0px;
+}
+
+.section-p{
+    font-size: 1.25rem;
+    color: #9ca3af;
 }

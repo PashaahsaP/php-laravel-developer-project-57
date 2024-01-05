@@ -11,8 +11,9 @@
     <div class="app">
         <header>
             <nav class="nav-container">
+
                 <div class="inner-nav-flex">
-                    <a href="">
+                    <a class="headerSpan" href="">
                         <span>Менеджер задач</span>
                     </a>
                 </div>
@@ -22,17 +23,23 @@
                     <a href=""><span>Метки</span></a>
                 </div>
                 <div class="inner-nav-flex">
-                    <div class="btn">
-                        <span>Вход</span>
+                    <div class="blue-btn">
+                        <a >Вход</a>
                     </div>
-                    <div class="btn">
-                        <span>Регистрация</span>
+                    <div class="blue-btn">
+                        <a href="{{ route('registerUser.create') }}">Регистрация</a>
                     </div>
                 </div>
             </nav>
         </header>
+        <div class="smudged-line"></div>
         <section>
-
+            <div>
+                <div>
+                    <h3 class="section-h3">Привет от Хекслета!</h3>
+                    <p class="section-p">Это просто менеджер задач на Laravel</p>
+                </div>
+            </div>
         </section>
     </div>
 </body>
