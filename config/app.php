@@ -143,6 +143,7 @@ return [
         'driver' => 'file',
         // 'store' => 'redis',
     ],
+    'public' => env('APP_PUBLIC_DIRECTORY', 'resources'),
 
     /*
     |--------------------------------------------------------------------------
