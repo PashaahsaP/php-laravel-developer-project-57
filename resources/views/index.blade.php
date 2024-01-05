@@ -9,29 +9,11 @@
 </head>
 <body>
     <div class="app">
-        <header>
-            <nav class="nav-container">
-
-                <div class="inner-nav-flex">
-                    <a class="headerSpan" href="">
-                        <span>Менеджер задач</span>
-                    </a>
-                </div>
-                <div class="inner-nav-flex">
-                    <a href=""><span>Задачи</span></a>
-                    <a href=""><span>Статусы</span></a>
-                    <a href=""><span>Метки</span></a>
-                </div>
-                <div class="inner-nav-flex">
-                    <div class="blue-btn">
-                        <a >Вход</a>
-                    </div>
-                    <div class="blue-btn">
-                        <a href="{{ route('registerUser.create') }}">Регистрация</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        @if ($isAuth)
+            @include('layouts.authHeader')
+        @else
+            @include('layouts.notAuthHeader')
+        @endif
         <div class="smudged-line"></div>
         <section>
             <div>

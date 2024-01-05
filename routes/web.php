@@ -3,6 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[app\Http\Controllers\Controller::class,'index']);
+Route::get('/',[Controller::class,'index']);
 
-Route::get('/create', [RegisteredUserController::class, 'create'])
+Route::get('authenticate', [AuthenticatedSessionController::class, 'create'])
+    ->name('authenticateSession.create');
+
+Route::get('registration', [RegisteredUserController::class, 'create'])
     ->name('registerUser.create');
 
 Route::get('/dashboard', function () {
