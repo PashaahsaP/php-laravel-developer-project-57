@@ -23,6 +23,7 @@
                 <div>
                     <h3 class="section-h3">Привет от Хекслета!</h3>
                     <p class="section-p">Это просто менеджер задач на Laravel</p>
+
                 </div>
             </div>
         </section>
