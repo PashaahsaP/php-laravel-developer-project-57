@@ -12,12 +12,17 @@
             <a href=""><span>Метки</span></a>
         </div>
         <div class="inner-nav-flex">
-            <div class="blue-btn">
-                <a href="/login">Вход</a>
-                {{-- <ahref="route('authenticateSession.create') }}">Вход</a>--}}
+            <div >
+                <form action="/login">
+                    @csrf
+                    <input class="headerSubmit" type="submit" value="Войти">
+                </form>
             </div>
-            <div class="blue-btn">
-                <a href="/register">Регистрация</a>
+            <div >
+                <form action="/register">
+                    @csrf
+                    <input class="headerSubmit" type="submit" value="Регистрация">
+                </form>
             </div>
         </div>
     </nav>

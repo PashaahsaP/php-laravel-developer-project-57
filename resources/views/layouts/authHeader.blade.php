@@ -12,12 +12,11 @@
             <a href=""><span>Метки</span></a>
         </div>
         <div class="inner-nav-flex">
-            <div class="blue-btn">
+            <div >
                 <form action="/logout" method="POST">
                     @csrf
-                    <input type="submit" value="Выйти">
+                    <input class="headerSubmit" type="submit" value="Выйти">
                 </form>
-
             </div>
         </div>
     </nav>
