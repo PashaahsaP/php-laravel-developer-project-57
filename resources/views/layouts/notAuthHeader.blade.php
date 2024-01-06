@@ -14,13 +14,11 @@
         <div class="inner-nav-flex">
             <div >
                 <form action="/login">
-                    @csrf
                     <input class="headerSubmit" type="submit" value="Войти">
                 </form>
             </div>
             <div >
                 <form action="/register">
-                    @csrf
                     <input class="headerSubmit" type="submit" value="Регистрация">
                 </form>
             </div>

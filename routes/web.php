@@ -20,28 +20,18 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/',[Controller::class,'index']);
 
-// Route::get('/login', [AuthenticatedSessionController::class, 'create'])
-// ->name('authenticateSession.create');
-
-
-// Route::get('/authIn', [AuthenticatedSessionController::class, 'create'])
-//     ->name('authenticateSession.create');
-// Route::get('/authOut', [AuthenticatedSessionController::class, 'destroy'])
-//     ->name('authenticateSession.destroy');
-
-// Route::get('registration', [RegisteredUserController::class, 'create'])
-//     ->name('registerUser.create');
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 require __DIR__.'/auth.php';
