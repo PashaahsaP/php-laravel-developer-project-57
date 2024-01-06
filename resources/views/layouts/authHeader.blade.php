@@ -13,7 +13,11 @@
         </div>
         <div class="inner-nav-flex">
             <div class="blue-btn">
-                <a >Выйти</a>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <input type="submit" value="Выйти">
+                </form>
+
             </div>
         </div>
     </nav>

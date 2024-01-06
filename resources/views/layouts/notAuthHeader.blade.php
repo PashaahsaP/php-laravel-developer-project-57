@@ -13,10 +13,11 @@
         </div>
         <div class="inner-nav-flex">
             <div class="blue-btn">
-                <a href="{{ route('authenticateSession.create') }}">Вход</a>
+                <a href="/login">Вход</a>
+                {{-- <ahref="route('authenticateSession.create') }}">Вход</a>--}}
             </div>
             <div class="blue-btn">
-                <a href="{{ route('registerUser.create') }}">Регистрация</a>
+                <a href="/register">Регистрация</a>
             </div>
         </div>
     </nav>

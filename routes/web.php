@@ -20,11 +20,19 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/',[Controller::class,'index']);
 
-Route::get('authenticate', [AuthenticatedSessionController::class, 'create'])
-    ->name('authenticateSession.create');
+// Route::get('/login', [AuthenticatedSessionController::class, 'create'])
+// ->name('authenticateSession.create');
 
-Route::get('registration', [RegisteredUserController::class, 'create'])
-    ->name('registerUser.create');
+
+// Route::get('/authIn', [AuthenticatedSessionController::class, 'create'])
+//     ->name('authenticateSession.create');
+// Route::get('/authOut', [AuthenticatedSessionController::class, 'destroy'])
+//     ->name('authenticateSession.destroy');
+
+// Route::get('registration', [RegisteredUserController::class, 'create'])
+//     ->name('registerUser.create');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
