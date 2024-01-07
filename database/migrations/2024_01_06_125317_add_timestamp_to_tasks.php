@@ -8,11 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('task_statuses', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            #$table->bigInteger('task_id')->unsigned();
-            #$table->foreign('task_id')->references('id')->on('task');
+        Schema::table('tasks', function (Blueprint $table) {
             $table->timestamps();
         });
     }
@@ -22,6 +18,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('task_statuses');
+
     }
 };

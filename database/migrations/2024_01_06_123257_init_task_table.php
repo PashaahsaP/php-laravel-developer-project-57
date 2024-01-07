@@ -6,17 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('task_Statuses', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            #$table->bigInteger('task_id')->unsigned();
-            #$table->foreign('task_id')->references('id')->on('task');
-            $table->timestamps();
+            $table->bigInteger('status_id')->unsigned()->nullable();
+            $table->foreign('status_id')->references('id')->on('task_statuses');
         });
     }
 
@@ -25,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('taskStatuses');
+        Schema::dropIfExists('tasks');
     }
 };
