@@ -18,5 +18,6 @@ return [
 'registre' => 'Зарегистрировать',
 'logout' => 'Выйти',
 'resetPassword' => 'Сбросить пароль',
+'create' => 'Создать',
 
 ];

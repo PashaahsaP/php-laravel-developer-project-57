@@ -18,6 +18,7 @@ return [
 'logout' => 'Logout',
 'registre' => 'Registre',
 'resetPassword' => 'Reset Password',
+'create' => 'Create',
 
 
 ];

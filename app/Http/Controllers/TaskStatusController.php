@@ -12,7 +12,9 @@ class TaskStatusController extends Controller
      */
     public function index()
     {
-        //
+        $statuses = TaskStatus::all();
+
+        return view('status.index',compact('statuses'));
     }
 
     /**
