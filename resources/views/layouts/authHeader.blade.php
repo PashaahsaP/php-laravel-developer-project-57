@@ -3,19 +3,19 @@
 
         <div class="inner-nav-flex">
             <a class="headerSpan" href="#">
-                Менеджер задач
+                {{ __('link.taskManager') }}
             </a>
         </div>
         <div class="inner-nav-flex">
-            <a class="middleLinkHeader" href="#">Задачи</a>
-            <a class="middleLinkHeader" href="#">Статусы</a>
-            <a class="middleLinkHeader" href="#">Метки</a>
+            <a class="middleLinkHeader" href="#">{{ __('link.tasks') }}</a>
+            <a class="middleLinkHeader" href="#">{{ __('link.statuses') }}</a>
+            <a class="middleLinkHeader" href="#">{{ __('link.marks') }}</a>
         </div>
         <div class="inner-nav-flex">
             <div >
                 <form action="/logout" method="POST">
                     @csrf
-                    <input class="headerSubmit" type="submit" value="Выйти">
+                    <input class="headerSubmit" type="submit" value="{{ __('button.logout') }}">
                 </form>
             </div>
         </div>

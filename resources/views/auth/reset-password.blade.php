@@ -14,14 +14,14 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Пароль')" />
+            <x-input-label for="password" :value="__('label.password')" />
             <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Потверждение')" />
+            <x-input-label for="password_confirmation" :value="__('label.confirmation')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
@@ -32,7 +32,7 @@
 
         <div class="flex items-center justify-end mt-4">
             <x-primary-button>
-                {{ __('Сбросить пароль') }}
+                {{ __('button.resetPassword') }}
             </x-primary-button>
         </div>
     </form>

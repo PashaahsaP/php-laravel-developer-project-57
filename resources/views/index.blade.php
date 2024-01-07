@@ -21,8 +21,8 @@
             @include('flash::message')
             <div class="helloSection">
                 <div>
-                    <h3 class="section-h3">Привет от Хекслета!</h3>
-                    <p class="section-p">Это просто менеджер задач на Laravel</p>
+                    <h3 class="section-h3">{{ __('header.welcomeHexlet') }}</h3>
+                    <p class="section-p">{{ __('paragrath.mainPageAfterWelcomeH') }}</p>
 
                 </div>
             </div>

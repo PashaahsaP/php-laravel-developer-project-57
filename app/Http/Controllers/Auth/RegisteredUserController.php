@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        flash('Добро пожаловать!')->success();
+        flash(__('flash.welcome'))->success();
 
         return redirect('/');
     }

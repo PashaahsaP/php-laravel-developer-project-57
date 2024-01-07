@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600">
-        {{ __('Введите почту чтобы можно было восстановить доступ') }}
+        {{ __('label.restorePasswordText') }}
     </div>
 
     <!-- Session Status -->
@@ -18,7 +18,7 @@
 
         <div class="flex items-center justify-end mt-4">
             <x-primary-button>
-                {{ __('Сбросить пароль') }}
+                {{ __('button.resetPassword') }}
             </x-primary-button>
         </div>
     </form>
