@@ -10,5 +10,6 @@ setup:
 
 test:
 	php artisan test
+
 lint:
 	composer phpcs
