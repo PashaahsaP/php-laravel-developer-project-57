@@ -2,6 +2,8 @@ setup:
 	composer update
 	cp -n .env.example .env
 	php artisan key:gen --ansi
+	npm install
+	npm run build
 
 test:
 	php artisan test
