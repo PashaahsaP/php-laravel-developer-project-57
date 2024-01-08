@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Auth;
+namespace Tests\Feature\Status;
 
 use App\Models\TaskStatus;
 use App\Providers\RouteServiceProvider;
@@ -15,9 +15,7 @@ class CreateTest extends TestCase
     {
         $response = $this->get('/taskStatuses/create');
         $response->assertStatus(200);
-        while (ob_get_level() > 0) { // Get buffer level and ensure all are closed
-            ob_end_clean();
-        }
+
     }
 
     // public function testCreateTaskStatus():void
