@@ -9,7 +9,11 @@ setup:
 	npm run build
 
 test:
+	echo "Starting tests..."
 	php artisan test
+	echo "Tests completed with status code $$?"
 
 lint:
 	composer phpcs
+
+	php artisan test
