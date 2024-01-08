@@ -18,4 +18,8 @@ return [
     'statusAction' => 'Действия',
     'statusChange' => 'Изменить',
     'statusDelete' => 'Удалить',
+    'statusEditHeader' => 'Изменение статуса',
+    'statusCreateHeader' => 'Создание статуса',
+
+
     ];

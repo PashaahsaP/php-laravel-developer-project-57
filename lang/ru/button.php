@@ -19,5 +19,6 @@ return [
 'logout' => 'Выйти',
 'resetPassword' => 'Сбросить пароль',
 'create' => 'Создать',
+'change' => 'Изменить',
 
 ];

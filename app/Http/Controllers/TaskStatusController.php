@@ -22,15 +22,25 @@ class TaskStatusController extends Controller
      */
     public function create()
     {
-        //
+        $taskStatus = new TaskStatus();
+        return view('status.create',compact('taskStatus'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, TaskStatus $taskStatus)
     {
-        //
+        $data = $this->validate($request,
+        [
+            'name'=>'required'
+        ]);
+
+        flash(__('flash.statusCreated'))->success();
+        $taskStatus->fill($data);
+        $taskStatus->save();
+
+        return redirect()->route('taskStatuses.index');
     }
 
     /**
@@ -46,7 +56,7 @@ class TaskStatusController extends Controller
      */
     public function edit(TaskStatus $taskStatus)
     {
-        //
+        return view('status.edit',compact('taskStatus'));
     }
 
     /**
@@ -54,7 +64,15 @@ class TaskStatusController extends Controller
      */
     public function update(Request $request, TaskStatus $taskStatus)
     {
-        //
+        $data = $this->validate($request,
+        [
+            'name'=>'required'
+        ]);
+
+        $taskStatus->fill($data);
+        $taskStatus->save();
+        flash(__('flash.statusChanged'))->success();
+        return redirect()->route('taskStatuses.index');
     }
 
     /**
@@ -63,6 +81,8 @@ class TaskStatusController extends Controller
     public function destroy(TaskStatus $taskStatus)
     {
         $taskStatus->delete();
+        flash(__('flash.statusDeleted'))->success();
+
         return redirect()->route('taskStatuses.index');
     }
 }

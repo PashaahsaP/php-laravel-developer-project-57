@@ -15,6 +15,8 @@ return [
 
 'welcome' => 'Welcome',
 'goodbay' => 'See you soon, comrade ;)',
-
+'statusCreated'=>'Status was created successfully',
+'statusChanged'=>'Status was updated successfully',
+'statusDeleted'=>'Status was deleted successfully',
 
 ];

@@ -2,7 +2,7 @@
     <nav class="nav-container">
 
         <div class="inner-nav-flex">
-            <a class="headerSpan" href="">
+            <a class="headerSpan" href="\">
                 {{ __('link.taskManager') }}
             </a>
         </div>

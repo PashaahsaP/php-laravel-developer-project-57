@@ -19,6 +19,7 @@ return [
 'registre' => 'Registre',
 'resetPassword' => 'Reset Password',
 'create' => 'Create',
+'change' => 'Change',
 
 
 ];

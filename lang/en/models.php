@@ -18,4 +18,6 @@ return [
     'statusAction' => 'Actions',
     'statusChange' => 'Change',
     'statusDelete' => 'Delete',
+    'statusEditHeader' => 'Status change',
+    'statusCreateHeader' => 'Creating status',
     ];
