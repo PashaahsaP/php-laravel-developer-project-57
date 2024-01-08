@@ -2,7 +2,7 @@
 @extends('layouts.main')
 
 @section('styles')
-<link rel="stylesheet" href="css/Status/index.css">
+@vite(["resources/css/Status/index.css"])
 
 @section('title')
 <title>{{ __('link.statuses') }}</title>

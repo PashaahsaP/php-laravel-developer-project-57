@@ -7,7 +7,6 @@ setup:
 	php artisan db:seed
 	npm install
 	npm run build
-	npm run dev
 
 test:
 	-php artisan test

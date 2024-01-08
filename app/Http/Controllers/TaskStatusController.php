@@ -14,7 +14,7 @@ class TaskStatusController extends Controller
     {
         $statuses = TaskStatus::all();
 
-        return view('status.index',compact('statuses'));
+        return view('Models.status.index',compact('statuses'));
     }
 
     /**
@@ -23,7 +23,7 @@ class TaskStatusController extends Controller
     public function create()
     {
         $taskStatus = new TaskStatus();
-        return view('status.create',compact('taskStatus'));
+        return view('Models.status.create',compact('taskStatus'));
     }
 
     /**
@@ -56,7 +56,7 @@ class TaskStatusController extends Controller
      */
     public function edit(TaskStatus $taskStatus)
     {
-        return view('status.edit',compact('taskStatus'));
+        return view('Models.status.edit',compact('taskStatus'));
     }
 
     /**

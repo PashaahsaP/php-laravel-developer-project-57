@@ -8,7 +8,7 @@
     <meta name="csrf-param" content="_token" />
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    @vite(['public/css/app.css','resources/js/app.js'])
+    @vite(['resources/css/app.css','resources/js/app.js'])
     @yield('styles')
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     @yield('title')

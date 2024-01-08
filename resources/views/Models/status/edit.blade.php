@@ -1,8 +1,7 @@
 @extends('layouts.main')
 
 @section('styles')
-<link rel="stylesheet" href="css/Status/edit.css">
-@vite(['public/css/Status/edit.css'])
+    @vite(['resources/css/Status/edit.css'])
 @section('title')
 <title>{{ __('models.statusEditHeader') }}</title>
 
