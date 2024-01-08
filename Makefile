@@ -1,11 +1,13 @@
 setup:
 	composer update
+	composer update
 	cp -n .env.example .env
 	php artisan key:gen --ansi
 	touch database/database.sqlite
 	php artisan migrate
 	php artisan db:seed
 	npm install
+	npm update
 	npm run build
 
 test:
