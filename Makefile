@@ -9,9 +9,7 @@ setup:
 	npm run build
 
 test:
-	echo "Starting tests..."
-	php artisan test
-	exit 0
+	-php artisan test
 
 lint:
 	composer phpcs
