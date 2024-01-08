@@ -26,8 +26,7 @@ jobs:
 
       - name: Init project
         run: make setup
-      - name: run serv
-        run: php artisan serve
+        
       - name: Test
         run: make test
 
