@@ -36,7 +36,7 @@ class TaskStatusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TaskStatus $status)
+    public function show(TaskStatus $taskStatus)
     {
         //
     }
@@ -44,7 +44,7 @@ class TaskStatusController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TaskStatus $status)
+    public function edit(TaskStatus $taskStatus)
     {
         //
     }
@@ -52,7 +52,7 @@ class TaskStatusController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TaskStatus $status)
+    public function update(Request $request, TaskStatus $taskStatus)
     {
         //
     }
@@ -60,8 +60,9 @@ class TaskStatusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TaskStatus $status)
+    public function destroy(TaskStatus $taskStatus)
     {
-        //
+        $taskStatus->delete();
+        return redirect()->route('taskStatuses.index');
     }
 }

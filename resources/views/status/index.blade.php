@@ -3,7 +3,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="css/Status/index.css">
-
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 @section('title')
 <title>{{ __('link.statuses') }}</title>
 
