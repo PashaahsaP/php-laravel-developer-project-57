@@ -14,7 +14,7 @@
     {{ Form::model($taskStatus, ['route' => ['taskStatuses.store', $taskStatus], 'method' => 'POST']) }}
         {{ Form::label('name', __('label.name') ) }}
     <br>
-        {{ Form::text('name') }}
+        {{ Form::text('name', null ,['class' => 'inputText']) }}
         {{ Form::submit(__('button.create'),['class' => 'headerSubmit'])}}<br>
     {{ Form::close() }}
 @endsection

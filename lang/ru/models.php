@@ -20,6 +20,12 @@ return [
     'statusDelete' => 'Удалить',
     'statusEditHeader' => 'Изменение статуса',
     'statusCreateHeader' => 'Создание статуса',
+    'status' => 'Статус',
+    'author' =>'Автор',
+    'executor' =>'Исполнитель',
+    'taskCreateHeader' => 'Создать задачу',
+    'taskEditHeader' => 'Редактировать задачу',
+    'viewingTask' =>'Просмотр задачи:',
 
 
     ];

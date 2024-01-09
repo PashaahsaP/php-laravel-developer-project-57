@@ -16,6 +16,8 @@ return [
     'password' => 'Password',
     'confirmation' => 'Confirmation',
     'name' => 'Name',
-    'restorePasswordText'=>'Enter your email address so that you can restore access'
-
+    'restorePasswordText'=>'Enter your email address so that you can restore access',
+    'description'=>'Description',
+    'status'=>'Status',
+    'author'=>'Author',
     ];

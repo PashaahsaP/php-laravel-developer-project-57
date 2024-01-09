@@ -15,9 +15,15 @@ return [
 
     'name' => 'Name',
     'dateCreation' => 'Date created',
+    'status' => 'Status',
+    'author' =>'Author',
+    'executor' =>'Executor',
     'statusAction' => 'Actions',
     'statusChange' => 'Change',
     'statusDelete' => 'Delete',
     'statusEditHeader' => 'Status change',
     'statusCreateHeader' => 'Creating status',
+    'taskCreateHeader' => 'Creating task',
+    'taskEditHeader' => 'Edit task',
+    'viewingTask' =>'Wiewing task:'
     ];

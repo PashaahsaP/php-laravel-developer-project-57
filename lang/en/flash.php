@@ -18,5 +18,7 @@ return [
 'statusCreated'=>'Status was created successfully',
 'statusChanged'=>'Status was updated successfully',
 'statusDeleted'=>'Status was deleted successfully',
-
+'taskCreated'=>'Task was created successfully',
+'taskChanged'=>'Task was updated successfully',
+'taskDeleted'=>'Task was deleted successfully',
 ];

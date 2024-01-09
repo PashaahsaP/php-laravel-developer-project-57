@@ -9,8 +9,8 @@
 table{
     color: white;
     width: 100%;
-
 }
+
 
 tr{
     border: 0px;
@@ -28,17 +28,6 @@ tr td{
     border-style: groove;
 }
 
-.firstRow{
-    flex-grow: 1;
-}
-
-.secondRow{
-    flex-grow: 2;
-}
-
-.thirdRow{
-    flex-grow: 2;
-}
 
 .change{
     color: #5485f8;
@@ -51,4 +40,3 @@ tr td{
 {
     margin: 0px 0px 10px 0px;
 }
-

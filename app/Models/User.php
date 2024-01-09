@@ -41,4 +41,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function performedTasks()
+    {
+        return $this->hasMany('App\Models\Task','executor_id');
+    }
+
+    public function createdTasks()
+    {
+        return $this->hasMany('App\Models\Task','author_id');
+    }
 }

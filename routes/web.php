@@ -22,6 +22,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/',[Controller::class,'index']);
 Route::resource('taskStatuses', TaskStatusController::class);
+Route::resource('tasks', TaskController::class);
 
 
 

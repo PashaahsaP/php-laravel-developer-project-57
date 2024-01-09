@@ -7,7 +7,7 @@
             </a>
         </div>
         <div class="inner-nav-flex">
-            <a class="middleLinkHeader" href="#">{{ __('link.tasks') }}</a>
+            <a class="middleLinkHeader" href="{{ route('tasks.index') }}">{{ __('link.tasks') }}</a>
             <a class="middleLinkHeader" href="{{ route('taskStatuses.index') }}">{{ __('link.statuses') }}</a>
             <a class="middleLinkHeader" href="#">{{ __('link.marks') }}</a>
         </div>
