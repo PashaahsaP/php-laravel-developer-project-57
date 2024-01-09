@@ -68,7 +68,7 @@ class TaskStatusController extends Controller
         [
             'name'=>'required'
         ]);
-
+        dump($data);
         $taskStatus->fill($data);
         $taskStatus->save();
         flash(__('flash.statusChanged'))->success();
