@@ -51,27 +51,4 @@ class UpdateTest extends TestCase
         $response->assertSessionHasErrors();
 
     }
-
-    // $comment = ArticleComment::factory()->create();
-    // $params = [
-    //     'content' => 'b',
-    // ];
-    // $response = $this->patch(route('articles.comments.update', [$comment->article, $comment]), $params);
-    // $response->assertStatus(302);
-    // $response->assertSessionHasErrors();
-
-    // $this->assertDatabaseHas('article_comments', [
-    //     'id' => $comment->id,
-    //     'content' => $comment->content
-    // ]);
-
-// public function testDestroy()
-//     {
-//         $comment = ArticleComment::factory()->create();
-//         $response = $this->delete(route('articles.comments.destroy', [$comment->article, $comment]));
-//         $response->assertStatus(302);
-
-//         $comment2 = ArticleComment::find($comment->id);
-//         $this->assertNull($comment2);
-//     }
 }

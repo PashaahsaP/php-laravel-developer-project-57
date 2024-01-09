@@ -9,12 +9,24 @@
 table{
     color: white;
     width: 100%;
+
 }
+
 
 tr{
     border: 0px;
     border-bottom: 1px;
     border-style: dashed;
+}
+
+tr td{
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.tableHeader{
+    border: 0px;
+    border-bottom: 2px;
+    border-style: groove;
 }
 
 .firstRow{
