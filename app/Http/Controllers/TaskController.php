@@ -73,7 +73,7 @@ class TaskController extends Controller
     {
         $status = TaskStatus::findOrFail($task->status_id);
 
-        return view()
+        return view('Models.tasks.show',compact('task','status'));
     }
 
     /**

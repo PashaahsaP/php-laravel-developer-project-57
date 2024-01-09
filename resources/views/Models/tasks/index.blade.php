@@ -12,6 +12,10 @@
 
 <h3 class="header-section">{{ __('link.tasks') }}</h3>
 
-
+@if(Auth::check())
+    @include('layouts.tasks.isAuthTable')
+@else
+    @include('layouts.tasks.isNotAuthTable')
+@endif
 
 @endsection

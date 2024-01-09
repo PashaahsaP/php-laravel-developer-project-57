@@ -10,12 +10,17 @@
 @section('content')
 @include('flash::message')
 
-<h3 class="header-section">{{ __('link.tasks') }}</h3>
+<h3 class="header-section defenition">{{ __('models.viewingTask') }}
+    <label class="headerLabel">{{ $task -> name }}</label>
+</h3>
 
-@if(Auth::check())
-    @include('layouts.tasks.isAuthTable')
-@else
-    @include('layouts.tasks.isNotAuthTable')
-@endif
+<label class="defenition">{{ __('label.name')}}:</label>
+<label >{{ $task -> name }}</label><br>
+
+<label class="defenition">{{ __('label.status')}}:</label>
+<label >{{ $status -> name }}</label><br>
+
+<label class="defenition">{{ __('label.description')}}:</label>
+<label >{{ $task -> description }}</label><br>
 
 @endsection

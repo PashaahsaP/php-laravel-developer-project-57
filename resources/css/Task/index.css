@@ -40,3 +40,11 @@ tr td{
 {
     margin: 0px 0px 10px 0px;
 }
+
+.show{
+    color: #5485f8;
+}
+
+.show:hover{
+    color: #3333ff;
+}

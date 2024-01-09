@@ -1,9 +1,17 @@
 .header-section{
-    color:#9ca3af;
+    color:white;
     font-size: 2rem;
     padding: 20px 0px;
 }
 label{
     color:#9ca3af;
     font-size: 1rem;
+}
+.defenition{
+    color:white;
+}
+
+.headerLabel{
+    font-size: 2rem;
+    padding: 20px 0px;
 }
