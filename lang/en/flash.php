@@ -18,7 +18,10 @@ return [
 'statusCreated'=>'Status was created successfully',
 'statusChanged'=>'Status was updated successfully',
 'statusDeleted'=>'Status was deleted successfully',
+'statusFailureDeleting'=>"Impossible remove that status, this status using in tasks",
 'taskCreated'=>'Task was created successfully',
 'taskChanged'=>'Task was updated successfully',
 'taskDeleted'=>'Task was deleted successfully',
+'taskFailureDeleting'=>"Impossible remove that task, task can be removed who created her",
+
 ];

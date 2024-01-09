@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TaskStatus;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TaskStatusController extends Controller
@@ -48,7 +49,7 @@ class TaskStatusController extends Controller
      */
     public function show(TaskStatus $taskStatus)
     {
-        //
+
     }
 
     /**
@@ -80,6 +81,14 @@ class TaskStatusController extends Controller
      */
     public function destroy(TaskStatus $taskStatus)
     {
+        $tasksCount = Task::where('status_id','=',"{$taskStatus->id}")->count();
+
+        if($tasksCount !== 0)
+        {
+            flash(__('flash.statusFailureDeleting'))->error();
+            return redirect()->route('taskStatuses.index');
+        }
+
         $taskStatus->delete();
         flash(__('flash.statusDeleted'))->success();
 

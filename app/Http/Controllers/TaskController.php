@@ -126,9 +126,18 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        $task->delete();
 
+
+        if(Auth::id() !== $task->author->id)
+        {
+            flash(__('flash.taskFailureDeleting'))->error();
+            return redirect()->route('tasks.index');
+        }
+
+
+        $task->delete();
         flash(__('flash.taskDeleted'))->success();
+
         return redirect()->route('tasks.index');
     }
 }
