@@ -1,12 +1,9 @@
 <?php
 
-namespace Tests\Feature\Task;
+namespace Tests\Feature\Models\Task;
 
 use App\Models\Task;
-use App\Models\TaskStatus;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use GuzzleHttp\Promise\Create;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Auth;

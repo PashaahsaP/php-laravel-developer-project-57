@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Status;
+namespace Tests\Feature\Models\Status;
 
 use App\Models\TaskStatus;
 use App\Providers\RouteServiceProvider;
