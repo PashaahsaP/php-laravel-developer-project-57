@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Models\Mark;
 
 class Task extends Model
 {
@@ -29,5 +31,10 @@ class Task extends Model
     public function executor()
     {
         return $this->belongsTo('App\Models\User','executor_id');
+    }
+
+    public function marks()
+    {
+        return $this->belongsToMany('App\Models\Mark');
     }
 }

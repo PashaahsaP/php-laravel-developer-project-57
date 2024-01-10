@@ -12,5 +12,4 @@
         <p class="section-p">{{ __('paragrath.mainPageAfterWelcomeH') }}</p>
     </div>
 </div>
-
 @endsection
