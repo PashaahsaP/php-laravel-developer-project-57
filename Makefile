@@ -14,4 +14,5 @@ test:
 lint:
 	composer phpcs
 
-	php artisan test
+coverage:
+	XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-html /home/pavel/Project/php-laravel-developer-project-57/TESTSOME

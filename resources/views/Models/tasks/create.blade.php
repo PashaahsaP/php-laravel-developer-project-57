@@ -22,7 +22,10 @@
         {{ Form::select('status_id', $statuses, null, ['class' => 'selectClass', 'placeholder' => "---------"]) }}<br>
 
         {{ Form::label('authors', __('label.author') ) }}<br>
-        {{ Form::select('author_id', $users, null, ['class' => 'selectClass', 'placeholder' => "---------"]) }}
+        {{ Form::select('author_id', $users, null, ['class' => 'selectClass', 'placeholder' => "---------"]) }}<br>
+
+        {{ Form::label('marks', __('label.marks') ) }}<br>
+        {{ Form::select('marks[]', $marks, null, ['class' => 'selectClass','multiple' => 'multiple', null]) }}
 
         {{ Form::submit(__('button.create'),['class' => 'headerSubmit'])}}<br>
     {{ Form::close() }}

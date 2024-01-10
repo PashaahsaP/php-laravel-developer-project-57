@@ -1,0 +1,54 @@
+
+.header-section{
+    color:#9ca3af;
+    font-size: 3rem;
+    padding: 30px 0px;
+    margin: 20px 0px 0px 0px;
+}
+
+table{
+    color: white;
+    width: 100%;
+
+}
+
+tr{
+    border: 0px;
+    border-bottom: 1px;
+    border-style: dashed;
+}
+
+tr td{
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.tableHeader{
+    border: 0px;
+    border-bottom: 2px;
+    border-style: groove;
+}
+
+.firstRow{
+    flex-grow: 1;
+}
+
+.secondRow{
+    flex-grow: 2;
+}
+
+.thirdRow{
+    flex-grow: 2;
+}
+
+.change{
+    color: #5485f8;
+}
+.delete{
+    color: #ff3333;
+}
+
+.createStatus
+{
+    margin: 0px 0px 10px 0px;
+}
+

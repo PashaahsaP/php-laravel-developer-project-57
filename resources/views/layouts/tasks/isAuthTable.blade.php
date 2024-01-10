@@ -17,7 +17,7 @@
         <td>{{ $task->id }}</td>
         <td>{{ $task->status->name }} </td>
         <td>
-            <a class="show" href="{{ route('tasks.show', $task) }}">{{ $task->status->name }}</a>
+            <a class="show" href="{{ route('tasks.show', $task) }}">{{ $task->name }}</a>
         </td>
         <td>{{ $task->author->name }}</td>
         <td>{{ $task->executor->name }}</td>

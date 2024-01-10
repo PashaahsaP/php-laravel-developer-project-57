@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 
-
+.h-4 w-4{
+    color: red;
+    background-color: red;
+}
 :root{
     --tw-bg-opacity:1
 }

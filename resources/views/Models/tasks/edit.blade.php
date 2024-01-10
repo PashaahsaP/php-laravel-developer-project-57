@@ -24,6 +24,9 @@
         {{ Form::label('authors', __('label.author') ) }}<br>
         {{ Form::select('author_id', $users, $task->author_id, ['class' => 'selectClass', 'placeholder' => "---------"]) }}
 
+        {{ Form::label('marks', __('label.marks') ) }}<br>
+        {{ Form::select('marks[]', $marks, $selectedMarks, ['class' => 'selectClass','multiple' => 'multiple']) }}
+
         {{ Form::submit(__('button.change'),['class' => 'headerSubmit'])}}<br>
     {{ Form::close() }}
 

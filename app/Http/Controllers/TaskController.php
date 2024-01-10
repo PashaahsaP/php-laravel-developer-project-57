@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mark;
 use App\Models\Task;
 use App\Models\TaskStatus;
 use App\Models\User;
@@ -36,7 +37,12 @@ class TaskController extends Controller
             return $acc;
         },[]);
 
-        return view('Models.tasks.create',compact('task','statuses','users'));
+        $marks = Mark::all()->reduce(function($acc,$elem) {
+            $acc[$elem->id] = $elem->name;
+            return $acc;
+        },[]);
+
+        return view('Models.tasks.create',compact('task','statuses','users','marks'));
     }
 
     /**
@@ -53,14 +59,15 @@ class TaskController extends Controller
         $executor =  User::findOrFail($request->input('author_id'));
         $status = TaskStatus::findOrFail($request->input('status_id'));
         $author = User::findOrFail(Auth::id());
+        $marks = Mark::whereIn('id', $request->input('marks'))->get();
 
         $task->name = $request->input('name');
         $task->description = $request->input('description');
         $task->status()->associate($status);
         $task->executor()->associate($executor);
         $task->author()->associate($author);
-
         $task->save();
+        $task->marks()->attach($marks);
 
         flash(__('flash.taskCreated'))->success();
         return redirect()->route('tasks.index');
@@ -89,8 +96,13 @@ class TaskController extends Controller
             $acc[$elem->id] = $elem->name;
             return $acc;
         },[]);
+        $marks = Mark::all()->reduce(function($acc,$elem) {
+            $acc[$elem->id] = $elem->name;
+            return $acc;
+        },[]);
+        $selectedMarks = $task->marks->map(fn($elem) => $elem['id']);
 
-    return view('Models.tasks.edit',compact('task','statuses','users'));
+        return view('Models.tasks.edit',compact('task','statuses','users','marks','selectedMarks'));
     }
 
     /**
@@ -101,23 +113,23 @@ class TaskController extends Controller
         $data = $this->validate($request,
         [
             'name'=>'required',
-            'status_id' =>'required',
-            'author_id' =>'required',
+            'status_id' =>'required'
         ]);
 
         $executor =  User::findOrFail($request->input('author_id'));
         $status = TaskStatus::findOrFail($request->input('status_id'));
         $author = User::findOrFail(Auth::id());
+        $marks = Mark::whereIn('id', $request->input('marks'))->get();
 
         $task->name = $request->input('name');
         $task->description = $request->input('description');
         $task->status()->associate($status);
         $task->executor()->associate($executor);
         $task->author()->associate($author);
-
         $task->save();
+        $task->marks()->sync($marks);
 
-        flash(__('flash.taskChanged'))->success();
+        flash(__('flash.taskCreated'))->success();
         return redirect()->route('tasks.index');
     }
 
@@ -134,7 +146,8 @@ class TaskController extends Controller
             return redirect()->route('tasks.index');
         }
 
-
+        $mark = $task->marks;
+        $task->marks()->detach($mark);
         $task->delete();
         flash(__('flash.taskDeleted'))->success();
 

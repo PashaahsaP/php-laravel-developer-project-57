@@ -25,5 +25,9 @@ return [
     'statusCreateHeader' => 'Creating status',
     'taskCreateHeader' => 'Creating task',
     'taskEditHeader' => 'Edit task',
-    'viewingTask' =>'Wiewing task:'
+    'viewingTask' =>'Wiewing task:',
+    'description' =>'Description',
+    'createMark' =>'Create mark',
+    'changeMark' =>'Change mark',
+
     ];

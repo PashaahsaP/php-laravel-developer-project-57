@@ -26,6 +26,9 @@ return [
     'taskCreateHeader' => 'Создать задачу',
     'taskEditHeader' => 'Редактировать задачу',
     'viewingTask' =>'Просмотр задачи:',
+    'description' =>'Описание',
+    'createMark' =>'Создать метку',
+    'changeMark' =>'Изменить метку',
 
 
     ];

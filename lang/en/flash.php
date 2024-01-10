@@ -23,5 +23,9 @@ return [
 'taskChanged'=>'Task was updated successfully',
 'taskDeleted'=>'Task was deleted successfully',
 'taskFailureDeleting'=>"Impossible remove that task, task can be removed who created her",
-
+'markCreated' =>'Mark created successfully',
+'markEdited' =>'Mark edited successfully',
+'markRemoved' =>'Mark removed successfully',
+'somethid wrong' => 'Something wrong',
+"can'tRemovedMark" => "Can't remove mark",
 ];

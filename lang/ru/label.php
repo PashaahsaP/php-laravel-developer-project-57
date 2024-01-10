@@ -20,5 +20,6 @@ return [
     'description'=>'Описание',
     'status'=>'Статус',
     'author'=>'Автор',
+    'marks'=>'Метки',
 
     ];

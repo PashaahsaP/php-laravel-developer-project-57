@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\TaskStatusController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\MarkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
@@ -23,6 +24,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 Route::get('/',[Controller::class,'index']);
 Route::resource('taskStatuses', TaskStatusController::class);
 Route::resource('tasks', TaskController::class);
+Route::resource('marks', MarkController::class);
 
 
 

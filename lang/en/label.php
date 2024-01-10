@@ -20,4 +20,5 @@ return [
     'description'=>'Description',
     'status'=>'Status',
     'author'=>'Author',
+    'marks'=>'Marks',
     ];
