@@ -36,7 +36,7 @@ class Mark extends Model
         }
         else
         {
-            return self::$colors[$lastItemIndex + 1];
+            return self::$colors[$lastItemIndex];
         }
 
     }

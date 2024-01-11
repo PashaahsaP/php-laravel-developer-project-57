@@ -60,6 +60,7 @@ class TaskController extends Controller
         $status = TaskStatus::findOrFail($request->input('status_id'));
         $author = User::findOrFail(Auth::id());
         $marks = Mark::whereIn('id', $request->input('marks'))->get();
+        $this->setMarks($marks);
 
         $task->name = $request->input('name');
         $task->description = $request->input('description');
@@ -120,6 +121,7 @@ class TaskController extends Controller
         $status = TaskStatus::findOrFail($request->input('status_id'));
         $author = User::findOrFail(Auth::id());
         $marks = Mark::whereIn('id', $request->input('marks'))->get();
+        $this->setMarks($marks);
 
         $task->name = $request->input('name');
         $task->description = $request->input('description');
@@ -152,5 +154,15 @@ class TaskController extends Controller
         flash(__('flash.taskDeleted'))->success();
 
         return redirect()->route('tasks.index');
+    }
+
+
+    private function setMarks(&$marks)
+    {
+        foreach($marks as $index=>$value)
+        {
+            $value->color = Mark::getColor($index);
+            $value->save();
+        }
     }
 }
