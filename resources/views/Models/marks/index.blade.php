@@ -18,4 +18,7 @@
     @include('layouts.marks.isNotAuthTable')
 @endif
 
+<a href="{{ $marks->nextPageUrl() }}">{{ $marks->currentPage()+1 }}</a>
+{{ dump( )}}
+
 @endsection

@@ -20,5 +20,7 @@ return [
 'resetPassword' => 'Сбросить пароль',
 'create' => 'Создать',
 'change' => 'Изменить',
+'submit' => 'Применить',
+
 
 ];

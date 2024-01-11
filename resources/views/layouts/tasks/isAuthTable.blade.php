@@ -1,6 +1,13 @@
-<form class="createStatus" action="{{ route('tasks.create') }}">
-    <input class="headerSubmit" type="submit" value="{{ __('button.create') }}">
-</form>
+<div class="searchLine">
+
+        @include('layouts.tasks.filter')
+
+    <form class="createStatus" action="{{ route('tasks.create') }}">
+        <div>
+            <input class="headerSubmit" type="submit" value="{{ __('button.create') }}">
+        </div>
+    </form>
+</div>
 
 <table >
     <tr class="tableHeader">

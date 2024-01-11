@@ -18,7 +18,7 @@ class MarkController extends Controller
      */
     public function index()
     {
-        $marks = Mark::all();
+        $marks = Mark::paginate(5)->fragment('marks');
 
         return view('Models.marks.index',compact('marks'));
     }

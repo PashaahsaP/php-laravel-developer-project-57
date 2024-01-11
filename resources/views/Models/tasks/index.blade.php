@@ -18,4 +18,14 @@
     @include('layouts.tasks.isNotAuthTable')
 @endif
 
+<div id="paginationContainer">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        @foreach ($tasks->links()->elements[0] as $index => $link )
+             <li class="page-item"><a class="page-link" href="{{ $link }}">{{ $index }}</a></li>
+        @endforeach
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    </ul>
+</div>
+@dump(@$tasks->links()->elements[1])
 @endsection

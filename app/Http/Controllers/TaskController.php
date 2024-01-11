@@ -8,6 +8,8 @@ use App\Models\TaskStatus;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\AllowedFilter;
 
 
 class TaskController extends Controller
@@ -17,9 +19,42 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::all();
+        $tasks = QueryBuilder::for(Task::class)
+            ->allowedFilters(
+                [AllowedFilter::exact('status_id'),
+                AllowedFilter::exact('author_id'),
+                AllowedFilter::exact('executor_id')]
+               )
+            ->paginate();
+        $status= null;
+        $author= null;
+        $executor = null;
+        if(request()->input('filter') !== null)
+        {
+            $status = request()->input('filter')['status_id'];
+            $author = request()->input('filter')['author_id'];
+            $executor = request()->input('filter')["executor_id"];
+        }
+        $users = User::all()->reduce(function ($acc, $elem) {
+            $acc[$elem->id] = $elem->name;
+            return $acc;
+        }, []);
 
-        return view('Models.tasks.index',compact('tasks'));
+        return view(
+            'Models.tasks.index',
+            [
+                'tasks' => $tasks,
+                'statuses' => TaskStatus::all()->reduce(function ($acc, $elem) {
+                    $acc[$elem->id] = $elem->name;
+                    return $acc;
+                }, []),
+                'authors' => $users,
+                'executors' => $users,
+                'selectedStatus' => $status === null ? 'Статус' : $status,
+                'selectedAuthor' => $author === null ? 'Автор': $author,
+                'selectedExecutor' => $executor === null ? 'Исполнитель' : $executor,
+            ]
+        );
     }
 
     /**
@@ -28,21 +63,21 @@ class TaskController extends Controller
     public function create()
     {
         $task = new Task();
-        $statuses = TaskStatus::all()->reduce(function($acc,$elem) {
-                $acc[$elem->id] = $elem->name;
-                return $acc;
-            },[]);
-        $users = User::all()->reduce(function($acc,$elem) {
+        $statuses = TaskStatus::all()->reduce(function ($acc, $elem) {
             $acc[$elem->id] = $elem->name;
             return $acc;
-        },[]);
-
-        $marks = Mark::all()->reduce(function($acc,$elem) {
+        }, []);
+        $users = User::all()->reduce(function ($acc, $elem) {
             $acc[$elem->id] = $elem->name;
             return $acc;
-        },[]);
+        }, []);
 
-        return view('Models.tasks.create',compact('task','statuses','users','marks'));
+        $marks = Mark::all()->reduce(function ($acc, $elem) {
+            $acc[$elem->id] = $elem->name;
+            return $acc;
+        }, []);
+
+        return view('Models.tasks.create', compact('task', 'statuses', 'users', 'marks'));
     }
 
     /**
@@ -50,18 +85,20 @@ class TaskController extends Controller
      */
     public function store(Request $request, Task $task)
     {
-        $data = $this->validate($request,
-        [
-            'name'=>'required',
-            'status_id' =>'required'
-        ]);
+        $data = $this->validate(
+            $request,
+            [
+                'name' => 'required',
+                'status_id' => 'required'
+            ]
+        );
 
         $executor =  User::findOrFail($request->input('author_id'));
         $status = TaskStatus::findOrFail($request->input('status_id'));
         $author = User::findOrFail(Auth::id());
         $marks = null;
 
-        if($request->input('marks') !== null){
+        if ($request->input('marks') !== null) {
             $marks = Mark::whereIn('id', $request->input('marks'))->get();
             $this->setMarks($marks);
         }
@@ -85,7 +122,7 @@ class TaskController extends Controller
     {
         $status = TaskStatus::findOrFail($task->status_id);
 
-        return view('Models.tasks.show',compact('task','status'));
+        return view('Models.tasks.show', compact('task', 'status'));
     }
 
     /**
@@ -93,21 +130,21 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        $statuses = TaskStatus::all()->reduce(function($acc,$elem) {
+        $statuses = TaskStatus::all()->reduce(function ($acc, $elem) {
             $acc[$elem->id] = $elem->name;
             return $acc;
-        },[]);
-        $users = User::all()->reduce(function($acc,$elem) {
+        }, []);
+        $users = User::all()->reduce(function ($acc, $elem) {
             $acc[$elem->id] = $elem->name;
             return $acc;
-        },[]);
-        $marks = Mark::all()->reduce(function($acc,$elem) {
+        }, []);
+        $marks = Mark::all()->reduce(function ($acc, $elem) {
             $acc[$elem->id] = $elem->name;
             return $acc;
-        },[]);
-        $selectedMarks = $task->marks->map(fn($elem) => $elem['id']);
+        }, []);
+        $selectedMarks = $task->marks->map(fn ($elem) => $elem['id']);
 
-        return view('Models.tasks.edit',compact('task','statuses','users','marks','selectedMarks'));
+        return view('Models.tasks.edit', compact('task', 'statuses', 'users', 'marks', 'selectedMarks'));
     }
 
     /**
@@ -115,19 +152,21 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        $data = $this->validate($request,
-        [
-            'name'=>'required',
-            'status_id' =>'required',
-            'author_id'=>'required'
-        ]);
+        $data = $this->validate(
+            $request,
+            [
+                'name' => 'required',
+                'status_id' => 'required',
+                'author_id' => 'required'
+            ]
+        );
 
         $executor =  User::findOrFail($request->input('author_id'));
         $status = TaskStatus::findOrFail($request->input('status_id'));
         $author = User::findOrFail(Auth::id());
         $marks = null;
 
-        if($request->input('marks') !== null){
+        if ($request->input('marks') !== null) {
             $marks = Mark::whereIn('id', $request->input('marks'))->get();
             $this->setMarks($marks);
         }
@@ -151,8 +190,7 @@ class TaskController extends Controller
     {
 
 
-        if(Auth::id() !== $task->author->id)
-        {
+        if (Auth::id() !== $task->author->id) {
             flash(__('flash.taskFailureDeleting'))->error();
             return redirect()->route('tasks.index');
         }
@@ -168,8 +206,7 @@ class TaskController extends Controller
 
     private function setMarks(&$marks)
     {
-        foreach($marks as $index=>$value)
-        {
+        foreach ($marks as $index => $value) {
             $value->color = Mark::getColor($index);
             $value->save();
         }

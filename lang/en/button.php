@@ -20,6 +20,7 @@ return [
 'resetPassword' => 'Reset Password',
 'create' => 'Create',
 'change' => 'Change',
+'submit' => 'Submit',
 
 
 ];

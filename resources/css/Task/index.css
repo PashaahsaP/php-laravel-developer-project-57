@@ -6,6 +6,8 @@
     margin: 20px 0px 0px 0px;
 }
 
+
+
 table{
     color: white;
     width: 100%;
@@ -39,6 +41,13 @@ tr td{
 .createStatus
 {
     margin: 0px 0px 10px 0px;
+
+}
+
+.searchLine{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .show{
@@ -47,4 +56,26 @@ tr td{
 
 .show:hover{
     color: #3333ff;
+}
+
+.selectClass{
+    border-radius: 7px;
+}
+
+.statusSelect{
+    width: 150px;
+}
+
+.authorSelect{
+    width: 250px;
+}
+
+.executorSelect{
+    width: 250px;
+}
+
+
+#paginationContainer{
+    display: flex;
+    justify-content: flex-end;
 }

@@ -24,7 +24,8 @@ class TaskFactory extends Factory
             'name' => fake()->text(15),
             'description'=>fake()->text(100),
             'status_id'=>$status->id,
-            'author_id'=>$user->id
+            'author_id'=>$user->id,
+            'executor_id'=>$user->id
         ];
     }
 }
