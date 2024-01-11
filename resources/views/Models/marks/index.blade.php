@@ -18,7 +18,18 @@
     @include('layouts.marks.isNotAuthTable')
 @endif
 
-<a href="{{ $marks->nextPageUrl() }}">{{ $marks->currentPage()+1 }}</a>
-{{ dump( )}}
+<div id="paginationContainer">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="{{ $marks->previousPageUrl() }}">Previous</a></li>
+        @foreach ($marks->links()->elements[0] as $index => $link )
+            @if ($marks->currentPage() === $index)
+                <li class="page-item active"><a  class="page-link" href="{{ $link }}">{{ $index }}</a></li>
+            @else
+                <li class="page-item"><a class="page-link" href="{{ $link }}">{{ $index }}</a></li>
+            @endif
+        @endforeach
+        <li class="page-item"><a class="page-link" href="{{ $marks->nextPageUrl()}}">Next</a></li>
+    </ul>
+</div>
 
 @endsection
