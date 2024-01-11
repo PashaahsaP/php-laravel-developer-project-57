@@ -59,8 +59,12 @@ class TaskController extends Controller
         $executor =  User::findOrFail($request->input('author_id'));
         $status = TaskStatus::findOrFail($request->input('status_id'));
         $author = User::findOrFail(Auth::id());
-        $marks = Mark::whereIn('id', $request->input('marks'))->get();
-        $this->setMarks($marks);
+        $marks = null;
+
+        if($request->input('marks') !== null){
+            $marks = Mark::whereIn('id', $request->input('marks'))->get();
+            $this->setMarks($marks);
+        }
 
         $task->name = $request->input('name');
         $task->description = $request->input('description');
@@ -114,14 +118,19 @@ class TaskController extends Controller
         $data = $this->validate($request,
         [
             'name'=>'required',
-            'status_id' =>'required'
+            'status_id' =>'required',
+            'author_id'=>'required'
         ]);
 
         $executor =  User::findOrFail($request->input('author_id'));
         $status = TaskStatus::findOrFail($request->input('status_id'));
         $author = User::findOrFail(Auth::id());
-        $marks = Mark::whereIn('id', $request->input('marks'))->get();
-        $this->setMarks($marks);
+        $marks = null;
+
+        if($request->input('marks') !== null){
+            $marks = Mark::whereIn('id', $request->input('marks'))->get();
+            $this->setMarks($marks);
+        }
 
         $task->name = $request->input('name');
         $task->description = $request->input('description');
