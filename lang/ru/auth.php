@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Что-то пошло не так',
+    'failed' => 'Введите правильные имя пользователя и пароль',
     'password' => 'Данный пароль некорректный.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
