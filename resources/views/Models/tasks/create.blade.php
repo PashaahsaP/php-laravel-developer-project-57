@@ -28,6 +28,9 @@
         {{ Form::select('marks[]', $marks, null, ['class' => 'selectClass','multiple' => 'multiple', null]) }}
 
         {{ Form::submit(__('button.create'),['class' => 'headerSubmit'])}}<br>
+        @foreach ($errors->all() as $item)
+        <div>{{ $item }}</div>
+        @endforeach
     {{ Form::close() }}
 
 

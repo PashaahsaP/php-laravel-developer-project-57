@@ -14,7 +14,7 @@ class CreateTest extends TestCase
 
     public function testCreatePageThatCanBeRendered():void
     {
-        $response = $this->get('/taskStatuses/create');
+        $response = $this->get('/task_statuses/create');
         $response->assertStatus(200);
 
     }
@@ -23,21 +23,21 @@ class CreateTest extends TestCase
     {
         $status = TaskStatus::factory()->create();
 
-        $response = $this->post('/taskStatuses', [
+        $response = $this->post('/task_statuses', [
             'name' => $status->name,
         ]);
 
         $response->assertStatus(302);
-        $response->assertRedirect('/taskStatuses');
+        $response->assertRedirect('/task_statuses');
     }
 
     public function testCreateEmptyTaskStatus():void
     {
-        $response = $this->from('/taskStatuses/create')->post('/taskStatuses', [
+        $response = $this->from('/task_statuses/create')->post('/task_statuses', [
             'name' => "",
         ]);
 
         $response->assertSessionHasErrors('name');
-        $response->assertRedirect('/taskStatuses/create');
+        $response->assertRedirect('/task_statuses/create');
     }
 }

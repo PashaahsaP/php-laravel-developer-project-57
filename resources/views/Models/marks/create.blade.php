@@ -21,6 +21,9 @@
         {{ Form::textarea('description',null,['class' => 'textArea']) }}<br>
 
         {{ Form::submit(__('button.create'),['class' => 'headerSubmit'])}}<br>
+        @foreach ($errors->all() as $item)
+        <div>{{ $item }}</div>
+        @endforeach
     {{ Form::close() }}
 
 

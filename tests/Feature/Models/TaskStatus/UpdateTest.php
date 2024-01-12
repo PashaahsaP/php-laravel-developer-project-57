@@ -15,7 +15,7 @@ class UpdateTest extends TestCase
     public function testCreatePageThatCanBeRendered():void
     {
         $status = TaskStatus::factory()->create();
-        $response = $this->get(route('taskStatuses.edit',$status));
+        $response = $this->get(route('task_statuses.edit',$status));
         $response->assertStatus(200);
     }
 
@@ -26,9 +26,9 @@ class UpdateTest extends TestCase
             'name' => 'pavel',
         ];
 
-        $response = $this->patch(route('taskStatuses.update', $status), $params);
+        $response = $this->patch(route('task_statuses.update', $status), $params);
         $response->assertStatus(302);
-        $response->assertRedirect('/taskStatuses');
+        $response->assertRedirect('/task_statuses');
 
         $this->assertDatabaseHas('task_statuses', [
             'id' => $status->id,
@@ -43,10 +43,10 @@ class UpdateTest extends TestCase
             'name' => '',
         ];
 
-        $response = $this->from(route('taskStatuses.edit',$status))
-                         ->patch(route('taskStatuses.update', $status), $params);
+        $response = $this->from(route('task_statuses.edit',$status))
+                         ->patch(route('task_statuses.update', $status), $params);
         $response->assertStatus(302);
-        $response->assertRedirect(route('taskStatuses.edit',$status));
+        $response->assertRedirect(route('task_statuses.edit',$status));
 
         $response->assertSessionHasErrors();
 

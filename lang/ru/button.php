@@ -19,7 +19,11 @@ return [
 'logout' => 'Выход',
 'resetPassword' => 'Сбросить пароль',
 'create' => 'Создать',
+'createTask' => 'Создать задачу',
+'createMark' => 'Создать метку',
+'createStatus' => 'Создать статус',
 'change' => 'Изменить',
+'update' => 'Обновить',
 'submit' => 'Применить',
 
 

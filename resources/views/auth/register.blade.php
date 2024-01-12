@@ -48,6 +48,5 @@
             </x-primary-button>
         </div>
     </form>
-    @dump($errors)
 </x-guest-layout>
 

@@ -17,7 +17,7 @@ class DeleteTest extends TestCase
     public function testDeleteStatus():void
     {
         $status = TaskStatus::factory()->create();
-        $response = $this->delete(route('taskStatuses.destroy',$status));
+        $response = $this->delete(route('task_statuses.destroy',$status));
 
         $response->assertStatus(302);
 
@@ -32,7 +32,7 @@ class DeleteTest extends TestCase
         $task->status_id = $status->id;
         $task->save();
         $status->save();
-        $response = $this->delete(route('taskStatuses.destroy',$status));
+        $response = $this->delete(route('task_statuses.destroy',$status));
         $response->assertStatus(302);
 
         $status2 = TaskStatus::find($status->id);

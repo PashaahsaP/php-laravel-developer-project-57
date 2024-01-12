@@ -13,7 +13,7 @@ class IndexTest extends TestCase
 
     public function testCreatePageThatCanBeRendered():void
     {
-        $response = $this->get(route('taskStatuses.index'));
+        $response = $this->get(route('task_statuses.index'));
         $response->assertStatus(200);
     }
 

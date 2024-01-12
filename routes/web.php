@@ -22,7 +22,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 */
 
 Route::get('/',[Controller::class,'index']);
-Route::resource('taskStatuses', TaskStatusController::class)->except(['show']);
+Route::resource('task_statuses', TaskStatusController::class)->except(['show']);
 Route::resource('tasks', TaskController::class);
 Route::resource('marks', MarkController::class)->except(['show']);
 

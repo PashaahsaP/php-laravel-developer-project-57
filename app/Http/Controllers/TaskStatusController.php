@@ -34,14 +34,14 @@ class TaskStatusController extends Controller
     {
         $data = $this->validate($request,
         [
-            'name'=>'required'
+            'name'=>'required|unique:task_statuses'
         ]);
 
         flash(__('flash.statusCreated'))->success();
         $taskStatus->fill($data);
         $taskStatus->save();
 
-        return redirect()->route('taskStatuses.index');
+        return redirect()->route('task_statuses.index');
     }
 
       /**
@@ -59,13 +59,13 @@ class TaskStatusController extends Controller
     {
         $data = $this->validate($request,
         [
-            'name'=>'required'
+            'name'=>'required|unique:task_statuses'
         ]);
 
         $taskStatus->fill($data);
         $taskStatus->save();
         flash(__('flash.statusChanged'))->success();
-        return redirect()->route('taskStatuses.index');
+        return redirect()->route('task_statuses.index');
     }
 
     /**
@@ -78,12 +78,12 @@ class TaskStatusController extends Controller
         if($tasksCount !== 0)
         {
             flash(__('flash.statusFailureDeleting'))->error();
-            return redirect()->route('taskStatuses.index');
+            return redirect()->route('task_statuses.index');
         }
 
         $taskStatus->delete();
         flash(__('flash.statusDeleted'))->success();
 
-        return redirect()->route('taskStatuses.index');
+        return redirect()->route('task_statuses.index');
     }
 }

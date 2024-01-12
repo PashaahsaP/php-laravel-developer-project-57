@@ -20,7 +20,10 @@
         {{ Form::label('description', __('label.description') ) }}<br>
         {{ Form::textarea('description',null,['class' => 'textArea']) }}<br>
 
-        {{ Form::submit(__('button.change'),['class' => 'headerSubmit'])}}<br>
+        {{ Form::submit(__('button.update'),['class' => 'headerSubmit'])}}<br>
+        @foreach ($errors->all() as $item)
+        <div>{{ $item }}</div>
+        @endforeach
     {{ Form::close() }}
 
 

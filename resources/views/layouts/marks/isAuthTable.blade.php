@@ -1,8 +1,18 @@
+<a class="headerSubmit" onclick="event.preventDefault(); document.getElementById('createMark').submit();">{{ __('button.createMark') }} </a>
+
+                <form id="createMark" action="{{ route('marks.create') }}" method="GET">
+                    @csrf
+                    <input class="headerSubmit" type="hidden" >
+                </form>
+
+
+{{--
 <form class="createStatus" action="{{ route('marks.create') }}">
     <input class="headerSubmit" type="submit" value="{{ __('button.create') }}">
-</form>
+</form> --}}
 
 <table >
+    <thead>
     <tr class="tableHeader">
         <td>ID</td>
         <td>{{ __('models.name') }}</td>
@@ -10,6 +20,8 @@
         <td>{{ __('models.dateCreation') }}</td>
         <td>{{ __('models.statusAction') }}</td>
     </tr>
+</thead>
+<tbody>
     @foreach ($marks as $mark )
     <tr>
         <td>{{ $mark->id }}</td>
@@ -23,5 +35,6 @@
         </td>
     </tr>
     @endforeach
+</tbody>
 </table>
 

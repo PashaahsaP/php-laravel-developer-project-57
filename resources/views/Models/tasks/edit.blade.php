@@ -27,7 +27,10 @@
         {{ Form::label('marks', __('label.marks') ) }}<br>
         {{ Form::select('marks[]', $marks, $selectedMarks, ['class' => 'selectClass','multiple' => 'multiple']) }}
 
-        {{ Form::submit(__('button.change'),['class' => 'headerSubmit'])}}<br>
+        {{ Form::submit(__('button.update'),['class' => 'headerSubmit'])}}<br>
+        @foreach ($errors->all() as $item)
+        <div>{{ $item }}</div>
+        @endforeach
     {{ Form::close() }}
 
 
