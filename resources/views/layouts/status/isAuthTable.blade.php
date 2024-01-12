@@ -15,7 +15,7 @@
         <td class="secondColumn">{{ $status->name }}</td>
         <td class="thirdColumn">{{ date("d/m/Y", strtotime($status->created_at))  }}</td>
         <td >
-            <a  class="delete" href="{{route('taskStatuses.destroy',$status) }}"  data-confirm="Вы уверены?" data-method="delete" rel="nofollow">
+            <a  class="delete" href="{{route('taskStatuses.destroy',$status) }}"  data-confirm="{{ __('flash.areYouSure')}}" data-method="delete" rel="nofollow">
                 {{ __('models.statusDelete') }}</a>
             <a class="change" href="{{ route('taskStatuses.edit',$status) }}">{{ __('models.statusChange') }}</a>
         </td>

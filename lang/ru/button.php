@@ -16,7 +16,7 @@ return [
 'login' => 'Войти',
 'registration' => 'Регистрация',
 'registre' => 'Зарегистрировать',
-'logout' => 'Выйти',
+'logout' => 'Выход',
 'resetPassword' => 'Сбросить пароль',
 'create' => 'Создать',
 'change' => 'Изменить',

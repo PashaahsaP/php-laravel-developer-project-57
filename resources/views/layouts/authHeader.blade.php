@@ -13,10 +13,13 @@
         </div>
         <div class="inner-nav-flex">
             <div >
-                <form action="/logout" method="POST">
+            <a class="headerSubmit" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('button.logout') }} </a>
+
+                <form id="logout-form" action="/logout" method="POST">
                     @csrf
-                    <input class="headerSubmit" type="submit" value="{{ __('button.logout') }}">
+                    <input class="headerSubmit" type="hidden" value="{{ __('button.logout') }}">
                 </form>
+
             </div>
         </div>
     </nav>

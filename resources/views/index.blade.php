@@ -8,7 +8,7 @@
 @include('flash::message')
 <div class="helloSection">
     <div>
-        <h3 class="section-h3">{{ __('header.welcomeHexlet') }}</h3>
+        <h1 class="section-h3">{{ __('header.welcomeHexlet') }}</h1>
         <p class="section-p">{{ __('paragrath.mainPageAfterWelcomeH') }}</p>
 
     </div>

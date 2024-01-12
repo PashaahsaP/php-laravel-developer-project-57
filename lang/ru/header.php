@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'welcomeHexlet' => 'Привет от Hexlet!',
+    'welcomeHexlet' => 'Привет от Хекслета!',
     'taskManager' => 'Менеджер задач',
 
 

@@ -28,4 +28,5 @@ return [
 'markRemoved' =>'Mark removed successfully',
 'somethid wrong' => 'Something wrong',
 "can'tRemovedMark" => "Can't remove mark",
+"areYouSure" => "Are you sure?",
 ];

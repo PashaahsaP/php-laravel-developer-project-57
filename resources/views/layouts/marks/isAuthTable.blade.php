@@ -17,7 +17,7 @@
         <td>{{ $mark->description }}</td>
         <td>{{ date("d/m/Y", strtotime($mark->created_at)) }}</td>
         <td>
-            <a  class="delete" href="{{route('marks.destroy',$mark) }}"  data-confirm="Вы уверены?" data-method="delete" rel="nofollow">
+            <a  class="delete" href="{{route('marks.destroy',$mark) }}"  data-confirm="{{ __('flash.areYouSure')}}" data-method="delete" rel="nofollow">
                 {{ __('models.statusDelete') }}</a>
             <a class="change" href="{{ route('marks.edit',$mark) }}">{{ __('models.statusChange') }}</a>
         </td>

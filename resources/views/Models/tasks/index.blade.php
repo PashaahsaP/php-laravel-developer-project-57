@@ -20,7 +20,7 @@
 
 <div id="paginationContainer">
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="{{ $tasks->previousPageUrl() }}">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="{{ $tasks->previousPageUrl() }}">{{ __('pagination.previous') }}</a></li>
         @foreach ($tasks->links()->elements[0] as $index => $link )
             @if ($tasks->currentPage() === $index)
                 <li class="page-item active"><a  class="page-link" href="{{ $link }}">{{ $index }}</a></li>
@@ -28,7 +28,7 @@
                 <li class="page-item"><a class="page-link" href="{{ $link }}">{{ $index }}</a></li>
             @endif
         @endforeach
-        <li class="page-item"><a class="page-link" href="{{ $tasks->nextPageUrl()}}">Next</a></li>
+        <li class="page-item"><a class="page-link" href="{{ $tasks->nextPageUrl()}}">{{ __('pagination.next') }}</a></li>
     </ul>
 </div>
 

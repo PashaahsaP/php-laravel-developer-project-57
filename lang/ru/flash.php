@@ -28,5 +28,6 @@ return [
 'markRemoved' =>'Метка успешно удалена',
 'somethid wrong' => 'Что-то пошло не так',
 "can'tRemovedMark" => "Невозможно удалить метку",
+"areYouSure" => "Вы уверены?",
 
 ];
