@@ -16,22 +16,20 @@ class CreateTest extends TestCase
     use RefreshDatabase;
 
 
-    public function testCreatePageThatCanBeRendered():void
+    public function testCreatePageThatCanBeRendered(): void
     {
         $response = $this->get(route('tasks.create'));
         $response->assertStatus(200);
-
     }
 
-    public function testCreatePageThatCanBeRenderedWithStatuts():void
+    public function testCreatePageThatCanBeRenderedWithStatuts(): void
     {
         TaskStatus::factory()->create()->save();
         $response = $this->get(route('tasks.create'));
         $response->assertStatus(200);
-
     }
 
-    public function testCreateTask():void
+    public function testCreateTask(): void
     {
         $status = TaskStatus::factory()->create();
         $user = User::factory()->create();
@@ -45,16 +43,15 @@ class CreateTest extends TestCase
             'name' => $status->name,
             'description' => 'some',
             'status_id' => $status->id,
-            'author_id' => $status->id
+            'created_by_id' => $status->id
         ]);
 
         $response->assertStatus(302);
 
         $response->assertRedirect('/tasks');
-
     }
 
-    public function testCreateEmptyTask():void
+    public function testCreateEmptyTask(): void
     {
         $status = TaskStatus::factory()->create();
         $user = User::factory()->create();
@@ -65,12 +62,11 @@ class CreateTest extends TestCase
             'name' => '',
             'description' => 'some',
             'status_id' => '',
-            'author_id' => $status->id
+            'created_by_id' => $status->id
         ]);
 
-        $response->assertSessionHasErrors(['name','status_id']);
+        $response->assertSessionHasErrors(['name', 'status_id']);
         $response->assertStatus(302);
         $response->assertRedirect('tasks/create');
-
     }
 }

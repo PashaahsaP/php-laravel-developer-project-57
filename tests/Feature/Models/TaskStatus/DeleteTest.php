@@ -14,10 +14,10 @@ class DeleteTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testDeleteStatus():void
+    public function testDeleteStatus(): void
     {
         $status = TaskStatus::factory()->create();
-        $response = $this->delete(route('task_statuses.destroy',$status));
+        $response = $this->delete(route('task_statuses.destroy', $status));
 
         $response->assertStatus(302);
 
@@ -25,20 +25,17 @@ class DeleteTest extends TestCase
         $this->assertNull($status2);
     }
 
-    public function testDeleteStatusIfTaskHaveThatStatus():void
+    public function testDeleteStatusIfTaskHaveThatStatus(): void
     {
         $status = TaskStatus::factory()->create();
         $task = Task::factory()->create();
         $task->status_id = $status->id;
         $task->save();
         $status->save();
-        $response = $this->delete(route('task_statuses.destroy',$status));
+        $response = $this->delete(route('task_statuses.destroy', $status));
         $response->assertStatus(302);
 
         $status2 = TaskStatus::find($status->id);
         $this->assertNotNull($status2);
     }
-
 }
-
-

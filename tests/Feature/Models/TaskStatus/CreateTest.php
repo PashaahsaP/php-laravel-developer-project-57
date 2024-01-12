@@ -12,14 +12,13 @@ class CreateTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testCreatePageThatCanBeRendered():void
+    public function testCreatePageThatCanBeRendered(): void
     {
         $response = $this->get('/task_statuses/create');
         $response->assertStatus(200);
-
     }
 
-    public function testCreateTaskStatus():void
+    public function testCreateTaskStatus(): void
     {
         $status = TaskStatus::factory()->create();
 
@@ -31,7 +30,7 @@ class CreateTest extends TestCase
         $response->assertRedirect('/task_statuses');
     }
 
-    public function testCreateEmptyTaskStatus():void
+    public function testCreateEmptyTaskStatus(): void
     {
         $response = $this->from('/task_statuses/create')->post('/task_statuses', [
             'name' => "",

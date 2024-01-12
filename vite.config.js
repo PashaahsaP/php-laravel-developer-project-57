@@ -15,9 +15,9 @@ export default defineConfig({
                 'resources/css/Task/show.css',
                 'resources/css/Status/edit.css',
                 'resources/css/Status/index.css',
-                'resources/css/Mark/create.css',
-                'resources/css/Mark/edit.css',
-                'resources/css/Mark/index.css'
+                'resources/css/Label/create.css',
+                'resources/css/Label/edit.css',
+                'resources/css/Label/index.css'
             ],
             refresh: true,
         }),

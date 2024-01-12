@@ -3,12 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
 use Illuminate\Database\Eloquent\Model;
 
 class TaskStatus extends Model
 {
-    use  HasFactory;
+    use HasFactory;
 
     protected $fillable = [
         'name',
@@ -16,6 +15,6 @@ class TaskStatus extends Model
 
     public function tasks()
     {
-        return $this->hasMany('App\Models\Task','status_id');
+        return $this->hasMany('App\Models\Task', 'status_id');
     }
 }

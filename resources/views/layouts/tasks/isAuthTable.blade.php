@@ -40,10 +40,12 @@
         </td>
         <td>{{ $task->author->name }}</td>
         <td>{{ $task->executor->name }}</td>
-        <td>{{ date("d/m/Y", strtotime($task->created_at)) }}</td>
+        <td>{{ date("d.m.Y", strtotime($task->created_at)) }}</td>
         <td>
-            <a  class="delete" href="{{route('tasks.destroy',$task) }}"  data-confirm="{{ __('flash.areYouSure')}}" data-method="delete" rel="nofollow">
-                {{ __('models.statusDelete') }}</a>
+            @if (Auth::id() === $task->created_by_id)
+                <a  class="delete" href="{{route('tasks.destroy',$task) }}"  data-confirm="{{ __('flash.areYouSure')}}" data-method="delete" rel="nofollow">
+                    {{ __('models.statusDelete') }}</a>
+            @endif
             <a class="change" href="{{ route('tasks.edit',$task) }}">{{ __('models.statusChange') }}</a>
         </td>
     </tr>

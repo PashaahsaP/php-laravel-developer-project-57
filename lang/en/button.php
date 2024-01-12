@@ -20,7 +20,7 @@ return [
 'resetPassword' => 'Reset Password',
 'create' => 'Create',
 'createTask' => 'Create task',
-'createMark' => 'Create mark',
+'createLabel' => 'Create label',
 'createStatus' => 'Create status',
 'change' => 'Change',
 'update' => 'Update',

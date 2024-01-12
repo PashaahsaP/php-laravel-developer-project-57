@@ -16,10 +16,11 @@ return [
     'password' => 'Пароль',
     'confirmation' => 'Потверждение',
     'name' => 'Имя',
-    'restorePasswordText'=>'Введите почту чтобы можно было восстановить доступ',
-    'description'=>'Описание',
-    'status'=>'Статус',
-    'author'=>'Автор',
-    'marks'=>'Метки',
+    'restorePasswordText' => 'Введите почту чтобы можно было восстановить доступ',
+    'description' => 'Описание',
+    'status' => 'Статус',
+    'author' => 'Автор',
+    'labels' => 'Метки',
+    'executor' => 'Исполнитель',
 
-    ];
+];

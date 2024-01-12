@@ -2,7 +2,7 @@
 
 return [
 
-/*
+    /*
 |--------------------------------------------------------------------------
 | Pagination Language Lines
 |--------------------------------------------------------------------------
@@ -13,20 +13,20 @@ return [
 |
 */
 
-'welcome' => 'Welcome',
-'goodbay' => 'See you soon, comrade ;)',
-'statusCreated'=>'Status was created successfully',
-'statusChanged'=>'Status was updated successfully',
-'statusDeleted'=>'Status was deleted successfully',
-'statusFailureDeleting'=>"Impossible remove that status, this status using in tasks",
-'taskCreated'=>'Task was created successfully',
-'taskChanged'=>'Task was updated successfully',
-'taskDeleted'=>'Task was deleted successfully',
-'taskFailureDeleting'=>"Impossible remove that task, task can be removed who created her",
-'markCreated' =>'Mark created successfully',
-'markEdited' =>'Mark edited successfully',
-'markRemoved' =>'Mark removed successfully',
-'somethid wrong' => 'Something wrong',
-"can'tRemovedMark" => "Can't remove mark",
-"areYouSure" => "Are you sure?",
+    'welcome' => 'Welcome',
+    'goodbay' => 'See you soon, comrade ;)',
+    'statusCreated' => 'Status was created successfully',
+    'statusChanged' => 'Status was updated successfully',
+    'statusDeleted' => 'Status was deleted successfully',
+    'statusFailureDeleting' => "Impossible remove that status, this status using in tasks",
+    'taskCreated' => 'Task was created successfully',
+    'taskChanged' => 'Task was updated successfully',
+    'taskDeleted' => 'Task was deleted successfully',
+    'taskFailureDeleting' => "Impossible remove that task, task can be removed who created her",
+    'labelCreated' => 'Label created successfully',
+    'labelEdited' => 'Label edited successfully',
+    'labelRemoved' => 'Label removed successfully',
+    'somethid wrong' => 'Something wrong',
+    "can'tRemovedLabel" => "Can't remove label",
+    "areYouSure" => "Are you sure?",
 ];

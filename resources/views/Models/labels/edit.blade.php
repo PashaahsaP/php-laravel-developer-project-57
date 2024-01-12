@@ -1,19 +1,19 @@
 @extends('layouts.main')
 
 @section('styles')
-    @vite(['resources/css/Mark/edit.css'])
+    @vite(['resources/css/Label/edit.css'])
 @endsection
 
 @section('title')
-    <title>{{ __('models.changeMark') }}</title>
+    <title>{{ __('models.changeLabel') }}</title>
 @endsection
 
 @section('content')
 
 
-    <h3 class="header-section">{{ __('models.changeMark') }}</h3>
+    <h3 class="header-section">{{ __('models.changeLabel') }}</h3>
 
-    {{ Form::model($mark, ['route' => ['marks.update', $mark], 'method' => 'PATCH']) }}
+    {{ Form::model($label, ['route' => ['labels.update', $label], 'method' => 'PATCH']) }}
         {{ Form::label('name', __('label.name') ) }}<br>
         {{ Form::text('name',null,['class' => 'inputText']) }}<br>
 

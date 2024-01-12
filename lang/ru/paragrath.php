@@ -15,4 +15,4 @@ return [
 
     'mainPageAfterWelcomeH' => 'Это просто менеджер задач на Laravel',
 
-    ];
+];

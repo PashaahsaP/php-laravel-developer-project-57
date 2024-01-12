@@ -14,10 +14,10 @@ class StatusSeeder extends Seeder
     public function run(): void
     {
         DB::table('task_statuses')->insert([
-            ['name' => 'новый','created_at'=>'2024-01-07 00:00:00'],
-            ['name' => 'в работе','created_at'=>'2024-01-07 00:00:00'],
-            ['name' => 'на тестировании','created_at'=>'2024-01-07 00:00:00'],
-            ['name' => 'завершен','created_at'=>'2024-01-07 00:00:00'],
+            ['name' => 'новый', 'created_at' => '2024-01-07 00:00:00'],
+            ['name' => 'в работе', 'created_at' => '2024-01-07 00:00:00'],
+            ['name' => 'на тестировании', 'created_at' => '2024-01-07 00:00:00'],
+            ['name' => 'завершен', 'created_at' => '2024-01-07 00:00:00'],
         ]);
     }
 }

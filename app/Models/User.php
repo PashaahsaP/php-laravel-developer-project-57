@@ -10,7 +10,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -44,11 +46,11 @@ class User extends Authenticatable
 
     public function performedTasks()
     {
-        return $this->hasMany('App\Models\Task','executor_id');
+        return $this->hasMany('App\Models\Task', 'assigned_to_id');
     }
 
     public function createdTasks()
     {
-        return $this->hasMany('App\Models\Task','author_id');
+        return $this->hasMany('App\Models\Task', 'created_by_id');
     }
 }

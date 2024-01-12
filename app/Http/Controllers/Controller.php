@@ -12,8 +12,8 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
     public function index()
     {
-        $isAuth= Auth::check();
+        $isAuth = Auth::check();
 
-        return view('index',compact('isAuth'));
+        return view('index', compact('isAuth'));
     }
 }

@@ -16,11 +16,11 @@ return new class extends Migration
             $table->bigInteger('status_id')->unsigned();
             $table->foreign('status_id')->references('id')->on('task_statuses');
 
-            $table->bigInteger('author_id')->unsigned();
-            $table->foreign('author_id')->references('id')->on('users');
+            $table->bigInteger('created_by_id')->unsigned();
+            $table->foreign('created_by_id')->references('id')->on('users');
 
-            $table->bigInteger('executor_id')->unsigned()->nullable();
-            $table->foreign('executor_id')->references('id')->on('users');
+            $table->bigInteger('assigned_to_id')->unsigned()->nullable();
+            $table->foreign('assigned_to_id')->references('id')->on('users');
 
             $table->timestamps();
         });

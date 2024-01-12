@@ -15,7 +15,7 @@ class TaskStatusController extends Controller
     {
         $statuses = TaskStatus::paginate();
 
-        return view('Models.status.index',compact('statuses'));
+        return view('Models.status.index', compact('statuses'));
     }
 
     /**
@@ -24,7 +24,7 @@ class TaskStatusController extends Controller
     public function create()
     {
         $taskStatus = new TaskStatus();
-        return view('Models.status.create',compact('taskStatus'));
+        return view('Models.status.create', compact('taskStatus'));
     }
 
     /**
@@ -32,10 +32,12 @@ class TaskStatusController extends Controller
      */
     public function store(Request $request, TaskStatus $taskStatus)
     {
-        $data = $this->validate($request,
-        [
-            'name'=>'required|unique:task_statuses'
-        ]);
+        $data = $this->validate(
+            $request,
+            [
+                'name' => 'required|unique:task_statuses'
+            ]
+        );
 
         flash(__('flash.statusCreated'))->success();
         $taskStatus->fill($data);
@@ -44,12 +46,12 @@ class TaskStatusController extends Controller
         return redirect()->route('task_statuses.index');
     }
 
-      /**
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(TaskStatus $taskStatus)
     {
-        return view('Models.status.edit',compact('taskStatus'));
+        return view('Models.status.edit', compact('taskStatus'));
     }
 
     /**
@@ -57,10 +59,12 @@ class TaskStatusController extends Controller
      */
     public function update(Request $request, TaskStatus $taskStatus)
     {
-        $data = $this->validate($request,
-        [
-            'name'=>'required|unique:task_statuses'
-        ]);
+        $data = $this->validate(
+            $request,
+            [
+                'name' => 'required|unique:task_statuses'
+            ]
+        );
 
         $taskStatus->fill($data);
         $taskStatus->save();
@@ -73,10 +77,9 @@ class TaskStatusController extends Controller
      */
     public function destroy(TaskStatus $taskStatus)
     {
-        $tasksCount = Task::where('status_id','=',"{$taskStatus->id}")->count();
+        $tasksCount = Task::where('status_id', '=', "{$taskStatus->id}")->count();
 
-        if($tasksCount !== 0)
-        {
+        if ($tasksCount !== 0) {
             flash(__('flash.statusFailureDeleting'))->error();
             return redirect()->route('task_statuses.index');
         }

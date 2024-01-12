@@ -2,11 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\TaskStatusController;
 use App\Http\Controllers\TaskController;
-use App\Http\Controllers\MarkController;
+use App\Http\Controllers\LabelController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
@@ -21,10 +20,10 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 |
 */
 
-Route::get('/',[Controller::class,'index']);
+Route::get('/', [Controller::class, 'index']);
 Route::resource('task_statuses', TaskStatusController::class)->except(['show']);
 Route::resource('tasks', TaskController::class);
-Route::resource('marks', MarkController::class)->except(['show']);
+Route::resource('labels', LabelController::class)->except(['show']);
 
 
 
@@ -39,4 +38,4 @@ Route::resource('marks', MarkController::class)->except(['show']);
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

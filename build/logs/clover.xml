@@ -446,8 +446,8 @@
       <line num="21" type="stmt" count="0"/>
       <metrics loc="24" ncloc="19" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
     </file>
-    <file name="/home/pavel/Project/php-laravel-developer-project-57/app/Models/Mark.php">
-      <class name="App\Models\Mark" namespace="global">
+    <file name="/home/pavel/Project/php-laravel-developer-project-57/app/Models/Label.php">
+      <class name="App\Models\Label" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
       </class>
       <line num="19" type="method" name="tasks" visibility="public" complexity="1" crap="2" count="0"/>
@@ -464,7 +464,7 @@
       <line num="28" type="stmt" count="4"/>
       <line num="31" type="method" name="executor" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="33" type="stmt" count="3"/>
-      <line num="36" type="method" name="marks" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="36" type="method" name="labels" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="38" type="stmt" count="0"/>
       <metrics loc="41" ncloc="41" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="8" coveredelements="6"/>
     </file>

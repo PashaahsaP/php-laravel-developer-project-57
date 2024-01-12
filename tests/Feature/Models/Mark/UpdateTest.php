@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature\Models\Mark;
+namespace Tests\Feature\Models\Label;
 
-use App\Models\Mark;
+use App\Models\Label;
 use App\Models\Task;
 use App\Models\TaskStatus;
 use App\Models\User;
@@ -17,44 +17,43 @@ class UpdateTest extends TestCase
     use RefreshDatabase;
 
 
-    public function testEditPageThatCanBeRendered():void
+    public function testEditPageThatCanBeRendered(): void
     {
-        $mark = Mark::factory()->create();
-        $mark->save();
-        $response = $this->get("marks/{$mark->id}/edit");
+        $label = Label::factory()->create();
+        $label->save();
+        $response = $this->get("labels/{$label->id}/edit");
         $response->assertStatus(200);
-
     }
 
-    public function testPatchTask():void
+    public function testPatchTask(): void
     {
-        $mark = Mark::factory()->create();
-        $mark->save();
+        $label = Label::factory()->create();
+        $label->save();
 
-        $params =[
-            'name' => $mark->name,
+        $params = [
+            'name' => $label->name,
             'description' => 'some',
         ];
 
-        $response = $this->from(route('marks.edit',$mark))->patch(route('marks.update', $mark), $params);
+        $response = $this->from(route('labels.edit', $label))->patch(route('labels.update', $label), $params);
         $response->assertStatus(302);
-        $response->assertRedirect('/marks');
-        $this->assertDatabaseHas('marks', $params);
+        $response->assertRedirect('/labels');
+        $this->assertDatabaseHas('labels', $params);
     }
 
-    public function testPatchEmptyTask():void
+    public function testPatchEmptyTask(): void
     {
-        $mark = Mark::factory()->create();
-        $mark->save();
+        $label = Label::factory()->create();
+        $label->save();
 
-        $params =[
+        $params = [
             'name' => '',
             'description' => 'some',
         ];
 
-        $response = $this->from(route('marks.edit',$mark))->patch(route('marks.update', $mark), $params);
+        $response = $this->from(route('labels.edit', $label))->patch(route('labels.update', $label), $params);
         $response->assertStatus(302);
         $response->assertSessionHasErrors(['name']);
-        $response->assertRedirect(route('marks.edit',$mark));
+        $response->assertRedirect(route('labels.edit', $label));
     }
 }

@@ -12,14 +12,14 @@ class UpdateTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testCreatePageThatCanBeRendered():void
+    public function testCreatePageThatCanBeRendered(): void
     {
         $status = TaskStatus::factory()->create();
-        $response = $this->get(route('task_statuses.edit',$status));
+        $response = $this->get(route('task_statuses.edit', $status));
         $response->assertStatus(200);
     }
 
-    public function testEditPageThatUpdateCorrectly():void
+    public function testEditPageThatUpdateCorrectly(): void
     {
         $status = TaskStatus::factory()->create();
         $params = [
@@ -36,19 +36,18 @@ class UpdateTest extends TestCase
         ]);
     }
 
-    public function testEditPageThatUpdateWithoutData():void
+    public function testEditPageThatUpdateWithoutData(): void
     {
         $status = TaskStatus::factory()->create();
         $params = [
             'name' => '',
         ];
 
-        $response = $this->from(route('task_statuses.edit',$status))
-                         ->patch(route('task_statuses.update', $status), $params);
+        $response = $this->from(route('task_statuses.edit', $status))
+            ->patch(route('task_statuses.update', $status), $params);
         $response->assertStatus(302);
-        $response->assertRedirect(route('task_statuses.edit',$status));
+        $response->assertRedirect(route('task_statuses.edit', $status));
 
         $response->assertSessionHasErrors();
-
     }
 }

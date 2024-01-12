@@ -15,9 +15,9 @@ return [
 
     'tasks' => 'Tasks',
     'statuses' => 'Statuses',
-    'marks' => 'Marks',
+    'labels' => 'Labels',
     'taskManager' => 'Task Manager',
-    'forgotPassword'=>'Forgot your password?',
-    'alreadyRegistered'=>'Already registered?'
+    'forgotPassword' => 'Forgot your password?',
+    'alreadyRegistered' => 'Already registered?'
 
-    ];
+];

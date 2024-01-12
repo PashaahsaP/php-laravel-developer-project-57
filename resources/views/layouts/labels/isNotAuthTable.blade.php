@@ -5,12 +5,12 @@
         <td>{{ __('models.description') }}</td>
         <td>{{ __('models.dateCreation') }}</td>
     </tr>
-    @foreach ($marks as $mark )
+    @foreach ($labels as $label )
     <tr>
-        <td>{{ $mark->id }}</td>
-        <td>{{ $mark->name }} </td>
-        <td>{{ $mark->description }}</td>
-        <td>{{ date("d/m/Y", strtotime($mark->created_at)) }}</td>
+        <td>{{ $label->id }}</td>
+        <td>{{ $label->name }} </td>
+        <td>{{ $label->description }}</td>
+        <td>{{ date("d/m/Y", strtotime($label->created_at)) }}</td>
     </tr>
     @endforeach
 </table>

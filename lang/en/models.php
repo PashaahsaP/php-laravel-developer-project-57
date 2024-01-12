@@ -16,8 +16,8 @@ return [
     'name' => 'Name',
     'dateCreation' => 'Date created',
     'status' => 'Status',
-    'author' =>'Author',
-    'executor' =>'Executor',
+    'author' => 'Author',
+    'executor' => 'Executor',
     'statusAction' => 'Actions',
     'statusChange' => 'Change',
     'statusDelete' => 'Delete',
@@ -25,9 +25,9 @@ return [
     'statusCreateHeader' => 'Creating status',
     'taskCreateHeader' => 'Creating task',
     'taskEditHeader' => 'Edit task',
-    'viewingTask' =>'Wiewing task:',
-    'description' =>'Description',
-    'createMark' =>'Create mark',
-    'changeMark' =>'Change mark',
+    'viewingTask' => 'Wiewing task:',
+    'description' => 'Description',
+    'createLabel' => 'Create label',
+    'changeLabel' => 'Change label',
 
-    ];
+];

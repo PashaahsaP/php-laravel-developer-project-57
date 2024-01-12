@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature\Models\Mark;
+namespace Tests\Feature\Models\Label;
 
-use App\Models\Mark;
+use App\Models\Label;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -13,33 +13,30 @@ class DeleteTest extends TestCase
 {
     use RefreshDatabase;
 
-      public function testDeleteMarkIsNotInTasks():void
+    public function testDeleteLabelIsNotInTasks(): void
     {
-        $mark = Mark::factory()->create();
-        $mark->save();
+        $label = Label::factory()->create();
+        $label->save();
 
-        $response = $this->delete(route('marks.destroy',$mark));
+        $response = $this->delete(route('labels.destroy', $label));
         $response->assertStatus(302);
 
-        $mark2 = Task::find($mark->id);
-        $this->assertNull($mark2);
+        $label2 = Task::find($label->id);
+        $this->assertNull($label2);
     }
 
-    public function testDeleteMarkIsInTasks():void
+    public function testDeleteLabelIsInTasks(): void
     {
         $task = Task::factory()->create();
-        $mark = Mark::factory()->create();
-        $task->marks()->attach($mark);
+        $label = Label::factory()->create();
+        $task->labels()->attach($label);
         $task->save();
-        $mark->save();
+        $label->save();
 
-        $response = $this->delete(route('marks.destroy',$mark));
+        $response = $this->delete(route('labels.destroy', $label));
         $response->assertStatus(302);
 
-        $mark2 = Task::find($mark->id);
-        $this->assertNotNull($mark2);
+        $label2 = Task::find($label->id);
+        $this->assertNotNull($label2);
     }
-
 }
-
-

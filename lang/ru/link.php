@@ -15,8 +15,8 @@ return [
 
     'tasks' => 'Задачи',
     'statuses' => 'Статусы',
-    'marks' => 'Метки',
+    'labels' => 'Метки',
     'taskManager' => 'Менеджер задач',
-    'forgotPassword'=>'Забыли пароль?',
-    'alreadyRegistered'=>'Уже зарегистрированы?'
-    ];
+    'forgotPassword' => 'Забыли пароль?',
+    'alreadyRegistered' => 'Уже зарегистрированы?'
+];

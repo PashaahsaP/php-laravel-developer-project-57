@@ -1,5 +1,6 @@
 
 <table >
+    <thead>
     <tr class="tableHeader">
         <td>ID</td>
         <td>{{ __('models.status') }}</td>
@@ -8,17 +9,20 @@
         <td>{{ __('models.executor') }}</td>
         <td>{{ __('models.dateCreation') }}</td>
     </tr>
+</thead>
+<tbody>
     @foreach ($tasks as $task )
     <tr>
         <td>{{ $task->id }}</td>
         <td>{{ $task->status->name }} </td>
         <td>
-            <a class="show" href="{{ route('tasks.show', $task) }}">{{ $task->status->name }}</a>
+            <a class="show" href="{{ route('tasks.show', $task) }}">{{ $task->name }}</a>
         </td>
         <td>{{ $task->author->name }}</td>
         <td>{{ $task->executor->name }}</td>
-        <td>{{ date("d/m/Y", strtotime($task->created_at)) }}</td>
+        <td>{{ date("d.m.Y", strtotime($task->created_at)) }}</td>
     </tr>
     @endforeach
+</tbody>
 </table>
 

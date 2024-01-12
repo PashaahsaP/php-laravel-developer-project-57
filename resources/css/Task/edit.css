@@ -11,3 +11,8 @@ input{
     padding: 10px;
     border-radius: 7px;
 }
+
+.flexContt{
+    display: flex;
+    flex-direction: column;
+}

@@ -22,10 +22,10 @@ class TaskFactory extends Factory
         $user = User::factory()->create();
         return [
             'name' => fake()->text(15),
-            'description'=>fake()->text(100),
-            'status_id'=>$status->id,
-            'author_id'=>$user->id,
-            'executor_id'=>$user->id
+            'description' => fake()->text(100),
+            'status_id' => $status->id,
+            'created_by_id' => $user->id,
+            'assigned_to_id' => $user->id
         ];
     }
 }
