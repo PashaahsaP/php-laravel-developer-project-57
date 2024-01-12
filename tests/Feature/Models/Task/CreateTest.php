@@ -18,7 +18,15 @@ class CreateTest extends TestCase
 
     public function testCreatePageThatCanBeRendered():void
     {
-        $response = $this->get('/taskStatuses/create');
+        $response = $this->get(route('tasks.create'));
+        $response->assertStatus(200);
+
+    }
+
+    public function testCreatePageThatCanBeRenderedWithStatuts():void
+    {
+        TaskStatus::factory()->create()->save();
+        $response = $this->get(route('tasks.create'));
         $response->assertStatus(200);
 
     }

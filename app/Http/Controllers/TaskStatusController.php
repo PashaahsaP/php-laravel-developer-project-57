@@ -44,15 +44,7 @@ class TaskStatusController extends Controller
         return redirect()->route('taskStatuses.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(TaskStatus $taskStatus)
-    {
-
-    }
-
-    /**
+      /**
      * Show the form for editing the specified resource.
      */
     public function edit(TaskStatus $taskStatus)

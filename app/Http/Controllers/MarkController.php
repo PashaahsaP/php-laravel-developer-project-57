@@ -18,7 +18,7 @@ class MarkController extends Controller
      */
     public function index()
     {
-        $marks = Mark::paginate(5)->fragment('marks');
+        $marks = Mark::paginate()->fragment('marks');
 
         return view('Models.marks.index',compact('marks'));
     }
@@ -49,14 +49,6 @@ class MarkController extends Controller
         $mark->save();
 
         return redirect()->route('marks.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Mark $mark)
-    {
-        //
     }
 
     /**

@@ -3,12 +3,6 @@
 namespace Tests\Feature\Models\Mark;
 
 use App\Models\Mark;
-use App\Models\Task;
-use App\Models\TaskStatus;
-use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use GuzzleHttp\Promise\Create;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
