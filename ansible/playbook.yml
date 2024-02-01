@@ -1,0 +1,23 @@
+- hosts: myhosts
+  gather_facts: no
+  vars:
+    root_dir: "/home/pavel/Project"
+    app_dir: ""
+    DB_CONNECTION: 'pgsql'
+    DB_HOST: '213.171.15.120'
+    DB_PORT: '5432'
+    DB_DATABASE: 'hexlet'
+    DB_USERNAME: 'root'
+    DB_PASSWORD: 'root'
+
+  tasks:
+  - name: copy config
+    template: src='{{root_dir}}/.env' dest='{{app_dir}}/.env'
+  - name: copy docker-compose file
+    copy: src='{{root_dir}}/docker-compose.yml' dest='{{app_dir}}/docker-compose.yml'
+  - name: pull docker image
+    command: docker pull pashaahsap/code:v2
+  - name: run docker-compose
+    command: chdir="/" docker-compose up -d
+    
+

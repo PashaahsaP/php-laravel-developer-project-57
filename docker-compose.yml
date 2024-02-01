@@ -1,0 +1,11 @@
+version: '1'
+
+services:
+  web:
+    image: pashaahsap/code:v2
+    container_name: laravel_app
+    volumes:
+      - /home/pavel/Project/php-laravel-developer-project-57/TESTSOME/.env:/app/.env
+    ports:
+      - "8000:8000"
+

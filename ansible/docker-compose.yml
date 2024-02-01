@@ -1,0 +1,8 @@
+services:
+  web:
+    image: pashaahsap/code:v2
+    container_name: laravel_app
+    volumes:
+      - /.env:/app/.env
+    ports:
+      - "8000:8000"
