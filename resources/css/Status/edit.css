@@ -3,11 +3,13 @@
     font-size: 2rem;
     padding: 20px 0px;
 }
-label{
-    color:#9ca3af;
-    font-size: 1rem;
-}
+
 .inputText{
     padding: 10px;
     border-radius: 7px;
+}
+
+label{
+    color:#9ca3af;
+    font-size: 1rem;
 }

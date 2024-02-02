@@ -1,8 +1,9 @@
-.textCenter{
-    font-size: 32px;
-
-}
 .flex-container{
     justify-content: center;
     display:flex;
+}
+
+.textCenter{
+    font-size: 32px;
+
 }

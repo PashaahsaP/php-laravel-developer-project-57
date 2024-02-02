@@ -1,18 +1,21 @@
+.flexContt{
+    display: flex;
+    flex-direction: column;
+}
+
 .header-section{
     color:#9ca3af;
     font-size: 2rem;
     padding: 20px 0px;
 }
-label{
-    color:#9ca3af;
-    font-size: 1rem;
-}
+
 input{
     padding: 10px;
     border-radius: 7px;
 }
 
-.flexContt{
-    display: flex;
-    flex-direction: column;
+label{
+    color:#9ca3af;
+    font-size: 1rem;
 }
+
