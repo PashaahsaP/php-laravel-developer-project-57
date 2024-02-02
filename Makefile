@@ -8,6 +8,9 @@ setup:
 	npm install
 	npm run build
 
+start:
+	php artisan serve
+
 test:
 	-php artisan test
 
