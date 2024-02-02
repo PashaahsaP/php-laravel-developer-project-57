@@ -1,8 +1,6 @@
 <p align="center">
 <a href="https://github.com/PashaahsaP/php-laravel-developer-project-57/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://codecov.io/gh/PashaahsaP/php-laravel-developer-project-57" > <img src="https://codecov.io/gh/PashaahsaP/php-laravel-developer-project-57/graph/badge.svg?token=QPECL05G8C"/> </a>
 </p>
 
 ## About Project
