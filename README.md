@@ -5,10 +5,16 @@
 
 ## About Project
 
-This project was created for learn basic of Laravel
+This project allows you to create tasks, add status and labels to them. This project like github issues 
 
 ## Setup
-...
- > some text
 
+```bash
+make setup
+```
 
+## Run
+
+```bash
+make start
+```
