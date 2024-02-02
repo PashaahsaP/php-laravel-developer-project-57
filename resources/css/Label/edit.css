@@ -3,15 +3,25 @@
     font-size: 2rem;
     padding: 20px 0px;
 }
-label{
-    color:#9ca3af;
-    font-size: 1rem;
-}
+
 .inputText{
     padding: 10px;
     margin: 10px 0px;
     border-radius: 7px;
     width: 350px;
+}
+
+label{
+    color:#9ca3af;
+    font-size: 1rem;
+}
+
+.selectClass{
+    width: 350px;
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 7px;
+
 }
 
 .textArea{
@@ -22,10 +32,8 @@ label{
     border-radius: 7px;
 
 }
-.selectClass{
-    width: 350px;
-    margin: 10px 0px;
-    padding: 10px;
-    border-radius: 7px;
 
-}
+
+
+
+

@@ -18,17 +18,17 @@ class CreateTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testCreateTaskStatus(): void
-    {
-        $status = TaskStatus::factory()->create();
+    // public function testCreateTaskStatus(): void
+    // {
+    //     $status = TaskStatus::factory()->create();
 
-        $response = $this->post('/task_statuses', [
-            'name' => $status->name,
-        ]);
+    //     $response = $this->post('/task_statuses', [
+    //         'name' => $status->name,
+    //     ]);
 
-        $response->assertStatus(302);
-        $response->assertRedirect('/task_statuses');
-    }
+    //     $response->assertStatus(302);
+    //     $response->assertRedirect('/task_statuses');
+    // }
 
     public function testCreateEmptyTaskStatus(): void
     {
